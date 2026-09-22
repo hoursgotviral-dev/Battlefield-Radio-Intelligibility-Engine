@@ -1,0 +1,37 @@
+audio:
+  sample_rate: 16000
+  n_fft: 512
+  hop_length: 128
+  win_length: 512
+  chunk_frames: 4  # Streaming chunk size: 4 frames = 512 samples = 32 ms
+
+model:
+  name: "dummy_conv_gru"
+  freq_bins: 257
+  conv_channels: 32
+  gru_hidden_dim: 64
+  num_gru_layers: 2
+  kernel_size: [3, 3]
+
+simulation:
+  snr_min_db: -15.0
+  snr_max_db: 20.0
+  bandpass:
+    low_freq_hz: 300.0
+    high_freq_hz: 3400.0
+    order: 4
+  clipping:
+    min_drive: 1.0
+    max_drive: 4.5
+  static_noise_level_db: -30.0
+  codec2_emulation:
+    bitrate: 2400
+    packet_loss_rate: 0.05
+
+deploy:
+  opset_version: 17
+  onnx_output_path: "artifacts/dummy_conv_gru.onnx"
+  target_device: "Snapdragon 8 Gen 3"
+  aihub_api_token: "${QAI_HUB_API_TOKEN}"
+
+seed: 42

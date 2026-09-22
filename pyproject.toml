@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "battlefield-radio-intelligibility-engine"
+version = "0.1.0"
+description = "Real-time on-device speech enhancement for tactical radio-degraded speech deployed on Snapdragon NPU via Qualcomm AI Hub"
+authors = [{ name = "Battlefield AI Team" }]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "torch>=2.0.0",
+    "torchaudio>=2.0.0",
+    "numpy>=1.22.0",
+    "scipy>=1.10.0",
+    "pyyaml>=6.0",
+    "onnx>=1.14.0",
+    "onnxruntime>=1.15.0",
+]
+
+[project.optional-dependencies]
+eval = [
+    "pesq>=0.0.4",
+    "pystoi>=0.3.3",
+    "jiwer>=3.0.0",
+    "transformers>=4.30.0",
+]
+dev = [
+    "pytest>=7.0.0",
+    "black>=23.0.0",
+    "ruff>=0.0.280",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

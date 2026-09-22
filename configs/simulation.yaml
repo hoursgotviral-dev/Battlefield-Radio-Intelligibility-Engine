@@ -1,0 +1,37 @@
+sample_rate: 16000
+seed: 42
+
+noise_sources:
+  gunfire:
+    weight_prob: 0.8
+    burst_count_range: [1, 5]
+    peak_crest_factor_db: 25.0
+  engine:
+    weight_prob: 0.9
+    types: ["tank_diesel", "apc_turbine", "hmmwv"]
+  wind_rotor:
+    weight_prob: 0.7
+    buffeting_mod_hz: [4.0, 18.0]
+
+snr_range_db: [-15.0, 20.0]
+
+radio_channel:
+  bandpass:
+    enabled: true
+    low_cutoff_hz: 300.0
+    high_cutoff_hz: 3400.0
+    filter_order: 4
+  codec2_vocoder:
+    enabled: true
+    mode: "2400" # options: "3200", "2400", "1600", "1200"
+    packet_loss_rate: 0.05
+    pitch_jitter: 0.03
+  non_linear_clipping:
+    enabled: true
+    saturation_drive_range: [1.2, 5.0]
+    asymmetry_factor: 0.1
+  rf_static_and_squelch:
+    enabled: true
+    thermal_noise_snr_db: 35.0
+    burst_static_prob: 0.3
+    squelch_tail_duration_ms: 40.0

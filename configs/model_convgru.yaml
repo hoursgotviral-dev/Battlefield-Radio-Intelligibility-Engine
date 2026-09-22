@@ -1,0 +1,23 @@
+model:
+  architecture: "dummy_conv_gru"
+  freq_bins: 257
+  conv_channels: 32
+  gru_hidden_dim: 64
+  num_gru_layers: 2
+  kernel_size: [3, 3]
+  streaming_chunk_frames: 4
+  causal: true
+
+deploy:
+  onnx_export:
+    opset: 17
+    batch_size: 1
+    input_names: ["input_chunk", "h_in"]
+    output_names: ["enhanced_chunk", "h_out"]
+    dynamic_axes: {} # Must be static for Qualcomm AI Hub NPU compilation
+    output_file: "artifacts/dummy_conv_gru.onnx"
+  qualcomm_aihub:
+    device_name: "Snapdragon 8 Gen 3"
+    chipset: "qualcomm-snapdragon-8gen3"
+    target_runtime: "qnn_lib_aarch64_android" # QNN execution provider on Hexagon NPU
+    precision: "fp16" # or int8
