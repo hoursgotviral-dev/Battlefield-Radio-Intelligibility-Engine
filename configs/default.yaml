@@ -31,7 +31,7 @@ simulation:
 deploy:
   opset_version: 17
   onnx_output_path: "artifacts/dummy_conv_gru.onnx"
-  target_device: "Snapdragon 8 Gen 3"
+  target_device: "Snapdragon X Elite"
   aihub_api_token: "${QAI_HUB_API_TOKEN}"
 
 seed: 42

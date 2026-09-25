@@ -22,8 +22,22 @@ ENV/
 .DS_Store
 Thumbs.db
 
-# Model checkpoints & large binary outputs (optional)
+# Model checkpoints & large binary outputs
 *.onnx
+*.onnx.data
 *.pth
 *.pt
+*.bin
 !models/*.py
+
+# Audio Data & Archives
+*.wav
+*.flac
+*.mp3
+*.tar.gz
+*.zip
+data/librispeech_clean/
+data/simulated/**/clean/
+data/simulated/**/degraded/
+!data/simulated/**/manifest.json
+

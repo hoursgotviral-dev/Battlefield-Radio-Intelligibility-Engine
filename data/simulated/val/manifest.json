@@ -1,0 +1,452 @@
+[
+  {
+    "id": "val_0000",
+    "original_id": "2035-147961-0021",
+    "clean_path": "data\\simulated\\val\\clean\\val_0000_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0000_deg.wav",
+    "transcript": "something happened to the hindmost sledge the driver lost control he was probably very drunk the horses left the road the sledge was caught in a clump of trees and overturned",
+    "snr_db": 13.96,
+    "duration_sec": 10.89
+  },
+  {
+    "id": "val_0001",
+    "original_id": "7976-105575-0018",
+    "clean_path": "data\\simulated\\val\\clean\\val_0001_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0001_deg.wav",
+    "transcript": "go back to the regiment he said smiling all will be needed",
+    "snr_db": 12.08,
+    "duration_sec": 4.29
+  },
+  {
+    "id": "val_0002",
+    "original_id": "2035-152373-0004",
+    "clean_path": "data\\simulated\\val\\clean\\val_0002_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0002_deg.wav",
+    "transcript": "like the two kings of sparta they reigned jointly dividing between them the labours and cares of state",
+    "snr_db": -0.91,
+    "duration_sec": 7.34
+  },
+  {
+    "id": "val_0003",
+    "original_id": "2277-149896-0030",
+    "clean_path": "data\\simulated\\val\\clean\\val_0003_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0003_deg.wav",
+    "transcript": "he began to wish that he had compromised in some way or other that he had sent the money perhaps he could do it up here",
+    "snr_db": 11.36,
+    "duration_sec": 6.3
+  },
+  {
+    "id": "val_0004",
+    "original_id": "2277-149896-0012",
+    "clean_path": "data\\simulated\\val\\clean\\val_0004_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0004_deg.wav",
+    "transcript": "she had not been able to get away this morning",
+    "snr_db": 5.49,
+    "duration_sec": 2.5
+  },
+  {
+    "id": "val_0005",
+    "original_id": "2086-149220-0006",
+    "clean_path": "data\\simulated\\val\\clean\\val_0005_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0005_deg.wav",
+    "transcript": "this was a fountain set round with a rim of old mossy stones and paved in its bed with what appeared to be a sort of mosaic work of variously colored pebbles",
+    "snr_db": 17.35,
+    "duration_sec": 10.35
+  },
+  {
+    "id": "val_0006",
+    "original_id": "2277-149874-0007",
+    "clean_path": "data\\simulated\\val\\clean\\val_0006_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0006_deg.wav",
+    "transcript": "the floors were covered with matting and the hall laid with a thin rag carpet",
+    "snr_db": 16.61,
+    "duration_sec": 4.4
+  },
+  {
+    "id": "val_0007",
+    "original_id": "2277-149897-0022",
+    "clean_path": "data\\simulated\\val\\clean\\val_0007_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0007_deg.wav",
+    "transcript": "all day the bar being closed he brooded alone shut out from home from the excitement of his resort from carrie and without the ability to alter his condition one iota",
+    "snr_db": 14.27,
+    "duration_sec": 10.05
+  },
+  {
+    "id": "val_0008",
+    "original_id": "1988-148538-0015",
+    "clean_path": "data\\simulated\\val\\clean\\val_0008_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0008_deg.wav",
+    "transcript": "these persons then displayed towards each other precisely the same puerile jealousies which animate the men of democracies the same eagerness to snatch the smallest advantages which their equals contested and the same desire to parade ostentatiously those of which they were in possession",
+    "snr_db": 18.02,
+    "duration_sec": 17.34
+  },
+  {
+    "id": "val_0009",
+    "original_id": "7976-110124-0019",
+    "clean_path": "data\\simulated\\val\\clean\\val_0009_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0009_deg.wav",
+    "transcript": "i promise you i will do you no harm",
+    "snr_db": 12.14,
+    "duration_sec": 2.75
+  },
+  {
+    "id": "val_0010",
+    "original_id": "2035-147961-0003",
+    "clean_path": "data\\simulated\\val\\clean\\val_0010_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0010_deg.wav",
+    "transcript": "we lay still and did not talk",
+    "snr_db": 1.72,
+    "duration_sec": 2.69
+  },
+  {
+    "id": "val_0011",
+    "original_id": "2277-149897-0027",
+    "clean_path": "data\\simulated\\val\\clean\\val_0011_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0011_deg.wav",
+    "transcript": "he would go to her and tell her all his family complications",
+    "snr_db": 4.81,
+    "duration_sec": 3.52
+  },
+  {
+    "id": "val_0012",
+    "original_id": "2035-147961-0023",
+    "clean_path": "data\\simulated\\val\\clean\\val_0012_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0012_deg.wav",
+    "transcript": "the road was clear and white and the groom's three blacks went like the wind",
+    "snr_db": 14.5,
+    "duration_sec": 4.31
+  },
+  {
+    "id": "val_0013",
+    "original_id": "2277-149874-0009",
+    "clean_path": "data\\simulated\\val\\clean\\val_0013_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0013_deg.wav",
+    "transcript": "one could see that he was very much wrapped up in his offspring",
+    "snr_db": -1.44,
+    "duration_sec": 3.35
+  },
+  {
+    "id": "val_0014",
+    "original_id": "2035-147961-0008",
+    "clean_path": "data\\simulated\\val\\clean\\val_0014_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0014_deg.wav",
+    "transcript": "it seemed to me that he despised him for being so simple and docile",
+    "snr_db": 3.16,
+    "duration_sec": 4.25
+  },
+  {
+    "id": "val_0015",
+    "original_id": "2086-149220-0032",
+    "clean_path": "data\\simulated\\val\\clean\\val_0015_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0015_deg.wav",
+    "transcript": "and yet if you could only see the benign smile of the original",
+    "snr_db": 4.92,
+    "duration_sec": 3.76
+  },
+  {
+    "id": "val_0016",
+    "original_id": "1988-147956-0012",
+    "clean_path": "data\\simulated\\val\\clean\\val_0016_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0016_deg.wav",
+    "transcript": "even from a distance one could see that there was something strange about this boy",
+    "snr_db": -0.81,
+    "duration_sec": 4.57
+  },
+  {
+    "id": "val_0017",
+    "original_id": "1988-148538-0005",
+    "clean_path": "data\\simulated\\val\\clean\\val_0017_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0017_deg.wav",
+    "transcript": "i do not believe in such republics any more than in that of plato or if the things we read of really happened i do not hesitate to affirm that these supposed democracies were composed of very different elements from ours and that they had nothing in common with the latter except their name",
+    "snr_db": -3.7,
+    "duration_sec": 16.35
+  },
+  {
+    "id": "val_0018",
+    "original_id": "1988-147956-0028",
+    "clean_path": "data\\simulated\\val\\clean\\val_0018_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0018_deg.wav",
+    "transcript": "when i came up he touched my shoulder and looked searchingly down into my face for several seconds",
+    "snr_db": 3.49,
+    "duration_sec": 5.88
+  },
+  {
+    "id": "val_0019",
+    "original_id": "2086-149220-0043",
+    "clean_path": "data\\simulated\\val\\clean\\val_0019_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0019_deg.wav",
+    "transcript": "what an instrument is the human voice",
+    "snr_db": 6.31,
+    "duration_sec": 2.77
+  },
+  {
+    "id": "val_0020",
+    "original_id": "2086-149220-0015",
+    "clean_path": "data\\simulated\\val\\clean\\val_0020_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0020_deg.wav",
+    "transcript": "they have known me much longer but never honor me with any familiarity though hardly a day passes without my bringing them food",
+    "snr_db": 1.18,
+    "duration_sec": 8.19
+  },
+  {
+    "id": "val_0021",
+    "original_id": "2086-149220-0023",
+    "clean_path": "data\\simulated\\val\\clean\\val_0021_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0021_deg.wav",
+    "transcript": "most of my likenesses do look unamiable but the very sufficient reason i fancy is because the originals are so",
+    "snr_db": -0.45,
+    "duration_sec": 7.37
+  },
+  {
+    "id": "val_0022",
+    "original_id": "2277-149896-0022",
+    "clean_path": "data\\simulated\\val\\clean\\val_0022_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0022_deg.wav",
+    "transcript": "later however his old discretion asserted itself",
+    "snr_db": 0.71,
+    "duration_sec": 3.38
+  },
+  {
+    "id": "val_0023",
+    "original_id": "2086-149220-0004",
+    "clean_path": "data\\simulated\\val\\clean\\val_0023_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0023_deg.wav",
+    "transcript": "phoebe wondered whose care and toil it could have been that had planted these vegetables and kept the soil so clean and orderly",
+    "snr_db": -3.2,
+    "duration_sec": 7.22
+  },
+  {
+    "id": "val_0024",
+    "original_id": "2277-149897-0012",
+    "clean_path": "data\\simulated\\val\\clean\\val_0024_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0024_deg.wav",
+    "transcript": "if he only had that letter back he wouldn't send it",
+    "snr_db": 13.57,
+    "duration_sec": 3.09
+  },
+  {
+    "id": "val_0025",
+    "original_id": "2035-147960-0006",
+    "clean_path": "data\\simulated\\val\\clean\\val_0025_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0025_deg.wav",
+    "transcript": "i know i am just awful jim i was so scared",
+    "snr_db": 16.68,
+    "duration_sec": 3.31
+  },
+  {
+    "id": "val_0026",
+    "original_id": "2035-147961-0033",
+    "clean_path": "data\\simulated\\val\\clean\\val_0026_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0026_deg.wav",
+    "transcript": "they were run out of their village",
+    "snr_db": 17.52,
+    "duration_sec": 1.95
+  },
+  {
+    "id": "val_0027",
+    "original_id": "2277-149897-0034",
+    "clean_path": "data\\simulated\\val\\clean\\val_0027_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0027_deg.wav",
+    "transcript": "dear sir we beg to inform you that we are instructed to wait until to morrow thursday at one o'clock before filing suit against you on behalf of missus julia hurstwood for divorce and alimony",
+    "snr_db": 10.57,
+    "duration_sec": 12.16
+  },
+  {
+    "id": "val_0028",
+    "original_id": "2277-149874-0001",
+    "clean_path": "data\\simulated\\val\\clean\\val_0028_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0028_deg.wav",
+    "transcript": "to carrie the sound of the little bells upon the horse cars as they tinkled in and out of hearing was as pleasing as it was novel",
+    "snr_db": -0.51,
+    "duration_sec": 7.04
+  },
+  {
+    "id": "val_0029",
+    "original_id": "2277-149896-0005",
+    "clean_path": "data\\simulated\\val\\clean\\val_0029_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0029_deg.wav",
+    "transcript": "many little wrinkles gathered between his eyes as he contemplated this and his brow moistened",
+    "snr_db": 1.18,
+    "duration_sec": 5.6
+  },
+  {
+    "id": "val_0030",
+    "original_id": "2086-149214-0001",
+    "clean_path": "data\\simulated\\val\\clean\\val_0030_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0030_deg.wav",
+    "transcript": "in good faith however he is not sufficiently imaginative to flatter himself with the slightest hope of this kind",
+    "snr_db": -0.91,
+    "duration_sec": 6.97
+  },
+  {
+    "id": "val_0031",
+    "original_id": "1988-148538-0011",
+    "clean_path": "data\\simulated\\val\\clean\\val_0031_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0031_deg.wav",
+    "transcript": "in aristocratic countries the great possess immense privileges upon which their pride rests without seeking to rely upon the lesser advantages which accrue to them",
+    "snr_db": 14.34,
+    "duration_sec": 9.55
+  },
+  {
+    "id": "val_0032",
+    "original_id": "2035-147961-0027",
+    "clean_path": "data\\simulated\\val\\clean\\val_0032_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0032_deg.wav",
+    "transcript": "yes how many",
+    "snr_db": -0.76,
+    "duration_sec": 2.88
+  },
+  {
+    "id": "val_0033",
+    "original_id": "7976-110523-0005",
+    "clean_path": "data\\simulated\\val\\clean\\val_0033_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0033_deg.wav",
+    "transcript": "ah father said hansel i am looking at my white cat sitting upon the roof of the house and trying to say good bye",
+    "snr_db": 10.43,
+    "duration_sec": 7.79
+  },
+  {
+    "id": "val_0034",
+    "original_id": "2277-149896-0007",
+    "clean_path": "data\\simulated\\val\\clean\\val_0034_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0034_deg.wav",
+    "transcript": "he would see how things turned out to morrow and then he would talk to her they were going to meet as usual",
+    "snr_db": 11.6,
+    "duration_sec": 5.38
+  },
+  {
+    "id": "val_0035",
+    "original_id": "2086-149220-0009",
+    "clean_path": "data\\simulated\\val\\clean\\val_0035_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0035_deg.wav",
+    "transcript": "these feathered people had existed too long in their distinct variety a fact of which the present representatives judging by their lugubrious deportment seemed to be aware",
+    "snr_db": 0.15,
+    "duration_sec": 10.6
+  },
+  {
+    "id": "val_0036",
+    "original_id": "1988-147956-0026",
+    "clean_path": "data\\simulated\\val\\clean\\val_0036_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0036_deg.wav",
+    "transcript": "we were so deep in the grass that we could see nothing but the blue sky over us and the gold tree in front of us",
+    "snr_db": -4.02,
+    "duration_sec": 6.92
+  },
+  {
+    "id": "val_0037",
+    "original_id": "7976-110523-0014",
+    "clean_path": "data\\simulated\\val\\clean\\val_0037_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0037_deg.wav",
+    "transcript": "grethel began to cry but it was all useless for the old witch made her do as she wanted",
+    "snr_db": -3.96,
+    "duration_sec": 6.29
+  },
+  {
+    "id": "val_0038",
+    "original_id": "2086-149220-0014",
+    "clean_path": "data\\simulated\\val\\clean\\val_0038_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0038_deg.wav",
+    "transcript": "he held a hoe in his hand and while phoebe was gone in quest of the crumbs had begun to busy himself with drawing up fresh earth about the roots of the tomatoes",
+    "snr_db": 10.98,
+    "duration_sec": 9.58
+  },
+  {
+    "id": "val_0039",
+    "original_id": "7976-105575-0019",
+    "clean_path": "data\\simulated\\val\\clean\\val_0039_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0039_deg.wav",
+    "transcript": "my friend with many others was being carried out to die elsewhere",
+    "snr_db": -1.51,
+    "duration_sec": 5.22
+  },
+  {
+    "id": "val_0040",
+    "original_id": "1988-147956-0004",
+    "clean_path": "data\\simulated\\val\\clean\\val_0040_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0040_deg.wav",
+    "transcript": "presently against one of those banks i saw a sort of shed thatched with the same wine colored grass that grew everywhere",
+    "snr_db": 19.25,
+    "duration_sec": 9.03
+  },
+  {
+    "id": "val_0041",
+    "original_id": "1988-147956-0000",
+    "clean_path": "data\\simulated\\val\\clean\\val_0041_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0041_deg.wav",
+    "transcript": "fuchs brought up a sack of potatoes and a piece of cured pork from the cellar and grandmother packed some loaves of saturday's bread a jar of butter and several pumpkin pies in the straw of the wagon box",
+    "snr_db": 12.32,
+    "duration_sec": 14.95
+  },
+  {
+    "id": "val_0042",
+    "original_id": "7976-110124-0025",
+    "clean_path": "data\\simulated\\val\\clean\\val_0042_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0042_deg.wav",
+    "transcript": "all my worries about you were foolish",
+    "snr_db": 16.72,
+    "duration_sec": 2.59
+  },
+  {
+    "id": "val_0043",
+    "original_id": "7976-105575-0027",
+    "clean_path": "data\\simulated\\val\\clean\\val_0043_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0043_deg.wav",
+    "transcript": "it required months and great events to make grant the hero of the army which he afterward became",
+    "snr_db": 0.39,
+    "duration_sec": 6.67
+  },
+  {
+    "id": "val_0044",
+    "original_id": "7976-110124-0015",
+    "clean_path": "data\\simulated\\val\\clean\\val_0044_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0044_deg.wav",
+    "transcript": "then she heard him go down the stairway and unbolt the heavy doors which led into the store",
+    "snr_db": 19.99,
+    "duration_sec": 5.35
+  },
+  {
+    "id": "val_0045",
+    "original_id": "2035-147961-0038",
+    "clean_path": "data\\simulated\\val\\clean\\val_0045_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0045_deg.wav",
+    "transcript": "the loss of his two friends had a depressing effect upon old mister shimerda",
+    "snr_db": 9.18,
+    "duration_sec": 4.71
+  },
+  {
+    "id": "val_0046",
+    "original_id": "2277-149896-0027",
+    "clean_path": "data\\simulated\\val\\clean\\val_0046_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0046_deg.wav",
+    "transcript": "hurstwood almost exclaimed out loud at the insistency of this thing",
+    "snr_db": 15.2,
+    "duration_sec": 3.6
+  },
+  {
+    "id": "val_0047",
+    "original_id": "2277-149874-0015",
+    "clean_path": "data\\simulated\\val\\clean\\val_0047_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0047_deg.wav",
+    "transcript": "she wanted to make some reference to their relations upon the train but was too timid",
+    "snr_db": 8.61,
+    "duration_sec": 4.73
+  },
+  {
+    "id": "val_0048",
+    "original_id": "7976-105575-0028",
+    "clean_path": "data\\simulated\\val\\clean\\val_0048_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0048_deg.wav",
+    "transcript": "for some reason the dead at hatchie bridge were not buried",
+    "snr_db": 4.71,
+    "duration_sec": 3.87
+  },
+  {
+    "id": "val_0049",
+    "original_id": "2277-149896-0019",
+    "clean_path": "data\\simulated\\val\\clean\\val_0049_clean.wav",
+    "degraded_path": "data\\simulated\\val\\degraded\\val_0049_deg.wav",
+    "transcript": "but he compromised by telling the boy that there would be no reply",
+    "snr_db": 10.09,
+    "duration_sec": 3.56
+  }
+]

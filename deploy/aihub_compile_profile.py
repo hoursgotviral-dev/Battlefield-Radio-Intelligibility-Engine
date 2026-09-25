@@ -27,8 +27,8 @@ except ImportError:
 
 def compile_and_profile_on_aihub(
     onnx_model_path: str,
-    device_name: str = "Snapdragon 8 Gen 3",
-    target_runtime: str = "qnn_lib_aarch64_android",
+    device_name: str = "Snapdragon X Elite",
+    target_runtime: str = "qnn_lib_aarch64_windows",
     api_token: str = None,
     options: str = "--target_arch v75",
 ) -> dict:
@@ -123,7 +123,7 @@ def main():
     parser = argparse.ArgumentParser(description="Compile and profile model on Qualcomm AI Hub.")
     parser.add_argument("--onnx", type=str, default="artifacts/dummy_conv_gru.onnx", help="Path to ONNX model")
     parser.add_argument("--config", type=str, default="configs/model_convgru.yaml", help="Path to config YAML")
-    parser.add_argument("--device", type=str, default=None, help="Device name (e.g. Snapdragon 8 Gen 3)")
+    parser.add_argument("--device", type=str, default=None, help="Device name (e.g. Snapdragon X Elite)")
     parser.add_argument("--api-token", type=str, default=None, help="Qualcomm AI Hub API token")
     args = parser.parse_args()
 
@@ -133,8 +133,8 @@ def main():
             config = yaml.safe_load(f)
 
     aihub_cfg = config.get("deploy", {}).get("qualcomm_aihub", {})
-    device_name = args.device or aihub_cfg.get("device_name", "Snapdragon 8 Gen 3")
-    target_runtime = aihub_cfg.get("target_runtime", "qnn_lib_aarch64_android")
+    device_name = args.device or aihub_cfg.get("device_name", "Snapdragon X Elite")
+    target_runtime = aihub_cfg.get("target_runtime", "qnn_lib_aarch64_windows")
 
     compile_and_profile_on_aihub(
         onnx_model_path=args.onnx,

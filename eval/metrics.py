@@ -103,23 +103,64 @@ def compute_pesq(
     return pesq_proxy
 
 
+def normalize_transcript(text: str) -> str:
+    """
+    Normalizes transcript for robust WER calculation:
+    - Lowercase
+    - Converts digits to standard words (e.g. '0' -> 'zero', '270' -> 'two seven zero')
+    - Strips punctuation and extraneous symbols
+    - Collapses multiple whitespace
+    """
+    if not text:
+        return ""
+    
+    digit_to_word = {
+        "0": "zero", "1": "one", "2": "two", "3": "three", "4": "four",
+        "5": "five", "6": "six", "7": "seven", "8": "eight", "9": "nine",
+    }
+    
+    text = text.lower()
+    expanded = []
+    for char in text:
+        if char.isdigit():
+            expanded.append(f" {digit_to_word[char]} ")
+        elif char.isalnum() or char.isspace():
+            expanded.append(char)
+        else:
+            expanded.append(" ")
+            
+    return " ".join("".join(expanded).split())
+
+
 def compute_wer(
     reference_text: str,
     hypothesis_text: str,
+    normalize: bool = True,
 ) -> float:
     """
     Computes Word Error Rate (WER) between reference and transcribed text.
     WER = (Insertions + Deletions + Substitutions) / Reference Words.
     """
-    if JIWER_AVAILABLE:
-        return float(jiwer.wer(reference_text, hypothesis_text))
+    if normalize:
+        ref_clean = normalize_transcript(reference_text)
+        hyp_clean = normalize_transcript(hypothesis_text)
+    else:
+        ref_clean = reference_text.strip().lower()
+        hyp_clean = hypothesis_text.strip().lower()
 
-    # Fallback: Levenshtein distance on words
-    ref_words = reference_text.strip().lower().split()
-    hyp_words = hypothesis_text.strip().lower().split()
+    ref_words = ref_clean.split()
+    hyp_words = hyp_clean.split()
+    
     if not ref_words:
         return 0.0 if not hyp_words else 1.0
 
+    if JIWER_AVAILABLE:
+        try:
+            return float(jiwer.wer(ref_clean, hyp_clean))
+        except Exception:
+            pass
+
+    # Fallback: Levenshtein distance on words
     d = np.zeros((len(ref_words) + 1, len(hyp_words) + 1), dtype=int)
     for i in range(len(ref_words) + 1):
         d[i, 0] = i
@@ -174,9 +215,17 @@ class WhisperEvaluator:
             # Fallback mock transcription for lightweight test environments
             return "alpha leader this is bravo actual radio check over"
         
-        result = self._pipeline({"raw": audio, "sampling_rate": sample_rate})
-        return result.get("text", "").strip()
+        try:
+            result = self._pipeline(
+                {"raw": audio, "sampling_rate": sample_rate},
+                generate_kwargs={"language": "english", "task": "transcribe"}
+            )
+            return result.get("text", "").strip()
+        except Exception:
+            result = self._pipeline({"raw": audio, "sampling_rate": sample_rate})
+            return result.get("text", "").strip()
 
     def evaluate_wer(self, audio: np.ndarray, reference_text: str, sample_rate: int = 16000) -> float:
         hypothesis = self.transcribe(audio, sample_rate)
         return compute_wer(reference_text, hypothesis)
+

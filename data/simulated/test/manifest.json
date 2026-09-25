@@ -1,0 +1,452 @@
+[
+  {
+    "id": "test_0000",
+    "original_id": "2277-149896-0014",
+    "clean_path": "data\\simulated\\test\\clean\\test_0000_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0000_deg.wav",
+    "transcript": "after a time he gave up waiting and drearily headed for the madison car",
+    "snr_db": 7.98,
+    "duration_sec": 4.07
+  },
+  {
+    "id": "test_0001",
+    "original_id": "2035-152373-0000",
+    "clean_path": "data\\simulated\\test\\clean\\test_0001_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0001_deg.wav",
+    "transcript": "throughout this century the power of the church was constantly on the increase and is visible in many important changes",
+    "snr_db": 9.5,
+    "duration_sec": 7.88
+  },
+  {
+    "id": "test_0002",
+    "original_id": "2086-149220-0044",
+    "clean_path": "data\\simulated\\test\\clean\\test_0002_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0002_deg.wav",
+    "transcript": "how wonderfully responsive to every emotion of the human soul",
+    "snr_db": 18.89,
+    "duration_sec": 3.95
+  },
+  {
+    "id": "test_0003",
+    "original_id": "2035-147961-0036",
+    "clean_path": "data\\simulated\\test\\clean\\test_0003_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0003_deg.wav",
+    "transcript": "during the auction he went about with his head down and never lifted his eyes",
+    "snr_db": 1.09,
+    "duration_sec": 4.48
+  },
+  {
+    "id": "test_0004",
+    "original_id": "1988-148538-0006",
+    "clean_path": "data\\simulated\\test\\clean\\test_0004_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0004_deg.wav",
+    "transcript": "in aristocracies every man has one sole object which he unceasingly pursues but amongst democratic nations the existence of man is more complex the same mind will almost always embrace several objects at the same time and these objects are frequently wholly foreign to each other as it cannot know them all well the mind is readily satisfied with imperfect notions of each",
+    "snr_db": 7.15,
+    "duration_sec": 22.86
+  },
+  {
+    "id": "test_0005",
+    "original_id": "2277-149896-0016",
+    "clean_path": "data\\simulated\\test\\clean\\test_0005_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0005_deg.wav",
+    "transcript": "fortunately there was nothing from his wife either",
+    "snr_db": 2.78,
+    "duration_sec": 2.79
+  },
+  {
+    "id": "test_0006",
+    "original_id": "2035-147960-0016",
+    "clean_path": "data\\simulated\\test\\clean\\test_0006_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0006_deg.wav",
+    "transcript": "a snake of his size in fighting trim would be more than any boy could handle",
+    "snr_db": -0.47,
+    "duration_sec": 4.89
+  },
+  {
+    "id": "test_0007",
+    "original_id": "2035-147960-0002",
+    "clean_path": "data\\simulated\\test\\clean\\test_0007_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0007_deg.wav",
+    "transcript": "one day when i rode over to the shimerdas i found antonia starting off on foot for russian peter's house to borrow a spade ambrosch needed",
+    "snr_db": 9.18,
+    "duration_sec": 8.84
+  },
+  {
+    "id": "test_0008",
+    "original_id": "1988-148538-0002",
+    "clean_path": "data\\simulated\\test\\clean\\test_0008_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0008_deg.wav",
+    "transcript": "i believe the seriousness of the americans arises partly from their pride",
+    "snr_db": -3.91,
+    "duration_sec": 4.45
+  },
+  {
+    "id": "test_0009",
+    "original_id": "2277-149896-0001",
+    "clean_path": "data\\simulated\\test\\clean\\test_0009_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0009_deg.wav",
+    "transcript": "he would have to pay her the money which she would now regularly demand or there would be trouble it did not matter what he did",
+    "snr_db": 0.7,
+    "duration_sec": 7.14
+  },
+  {
+    "id": "test_0010",
+    "original_id": "7976-110124-0009",
+    "clean_path": "data\\simulated\\test\\clean\\test_0010_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0010_deg.wav",
+    "transcript": "bui we should not forget our promise to our father cried the youngest daughter",
+    "snr_db": 3.84,
+    "duration_sec": 4.81
+  },
+  {
+    "id": "test_0011",
+    "original_id": "1988-147956-0027",
+    "clean_path": "data\\simulated\\test\\clean\\test_0011_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0011_deg.wav",
+    "transcript": "after antonia had said the new words over and over she wanted to give me a little chased silver ring she wore on her middle finger",
+    "snr_db": 11.69,
+    "duration_sec": 7.73
+  },
+  {
+    "id": "test_0012",
+    "original_id": "7976-105575-0003",
+    "clean_path": "data\\simulated\\test\\clean\\test_0012_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0012_deg.wav",
+    "transcript": "there were no breastworks yet that one little brigade of hamilton's division stood there in the open and repulsed assault after assault",
+    "snr_db": 13.42,
+    "duration_sec": 9.18
+  },
+  {
+    "id": "test_0013",
+    "original_id": "2277-149896-0031",
+    "clean_path": "data\\simulated\\test\\clean\\test_0013_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0013_deg.wav",
+    "transcript": "he would go in and see anyhow he would have no row",
+    "snr_db": 10.18,
+    "duration_sec": 3.61
+  },
+  {
+    "id": "test_0014",
+    "original_id": "2277-149897-0026",
+    "clean_path": "data\\simulated\\test\\clean\\test_0014_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0014_deg.wav",
+    "transcript": "he had loved her earnestly enough but now that the possibility of losing her stared him in the face she seemed much more attractive",
+    "snr_db": 19.69,
+    "duration_sec": 6.82
+  },
+  {
+    "id": "test_0015",
+    "original_id": "2086-149220-0035",
+    "clean_path": "data\\simulated\\test\\clean\\test_0015_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0015_deg.wav",
+    "transcript": "is there nothing wild in the eye continued holgrave so earnestly that it embarrassed phoebe as did also the quiet freedom with which he presumed on their so recent acquaintance",
+    "snr_db": 12.31,
+    "duration_sec": 10.55
+  },
+  {
+    "id": "test_0016",
+    "original_id": "7976-105575-0026",
+    "clean_path": "data\\simulated\\test\\clean\\test_0016_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0016_deg.wav",
+    "transcript": "rosecrans protested it was in vain",
+    "snr_db": 1.85,
+    "duration_sec": 3.55
+  },
+  {
+    "id": "test_0017",
+    "original_id": "2086-149220-0011",
+    "clean_path": "data\\simulated\\test\\clean\\test_0017_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0017_deg.wav",
+    "transcript": "the distinguishing mark of the hens was a crest of lamentably scanty growth in these latter days but so oddly and wickedly analogous to hepzibah's turban that phoebe to the poignant distress of her conscience but inevitably was led to fancy a general resemblance betwixt these forlorn bipeds and her respectable relative",
+    "snr_db": 0.67,
+    "duration_sec": 19.43
+  },
+  {
+    "id": "test_0018",
+    "original_id": "2035-147961-0000",
+    "clean_path": "data\\simulated\\test\\clean\\test_0018_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0018_deg.wav",
+    "transcript": "peter told his troubles to mister shimerda he was unable to meet a note which fell due on the first of november had to pay an exorbitant bonus on renewing it and to give a mortgage on his pigs and horses and even his milk cow",
+    "snr_db": 0.84,
+    "duration_sec": 15.07
+  },
+  {
+    "id": "test_0019",
+    "original_id": "2086-149220-0008",
+    "clean_path": "data\\simulated\\test\\clean\\test_0019_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0019_deg.wav",
+    "transcript": "it was evident that the race had degenerated like many a noble race besides in consequence of too strict a watchfulness to keep it pure",
+    "snr_db": 3.33,
+    "duration_sec": 8.89
+  },
+  {
+    "id": "test_0020",
+    "original_id": "2086-149220-0001",
+    "clean_path": "data\\simulated\\test\\clean\\test_0020_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0020_deg.wav",
+    "transcript": "the white double rosebush had evidently been propped up anew against the house since the commencement of the season and a pear tree and three damson trees which except a row of currant bushes constituted the only varieties of fruit bore marks of the recent amputation of several superfluous or defective limbs",
+    "snr_db": 6.63,
+    "duration_sec": 19.78
+  },
+  {
+    "id": "test_0021",
+    "original_id": "1988-147956-0008",
+    "clean_path": "data\\simulated\\test\\clean\\test_0021_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0021_deg.wav",
+    "transcript": "she made missus shimerda understand the friendly intention of our visit and the bohemian woman handled the loaves of bread and even smelled them and examined the pies with lively curiosity exclaiming much good much thank",
+    "snr_db": 0.02,
+    "duration_sec": 14.92
+  },
+  {
+    "id": "test_0022",
+    "original_id": "2035-147961-0002",
+    "clean_path": "data\\simulated\\test\\clean\\test_0022_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0022_deg.wav",
+    "transcript": "she asked peter to wait a moment and when she came back from the kitchen she brought a bag of sandwiches and doughnuts for us",
+    "snr_db": 11.62,
+    "duration_sec": 7.0
+  },
+  {
+    "id": "test_0023",
+    "original_id": "1988-147956-0014",
+    "clean_path": "data\\simulated\\test\\clean\\test_0023_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0023_deg.wav",
+    "transcript": "ambrosch he make good farmer",
+    "snr_db": 19.81,
+    "duration_sec": 2.19
+  },
+  {
+    "id": "test_0024",
+    "original_id": "2086-149220-0029",
+    "clean_path": "data\\simulated\\test\\clean\\test_0024_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0024_deg.wav",
+    "transcript": "i can assure you that this is a modern face and one which you will very probably meet",
+    "snr_db": -2.77,
+    "duration_sec": 5.58
+  },
+  {
+    "id": "test_0025",
+    "original_id": "1988-148538-0010",
+    "clean_path": "data\\simulated\\test\\clean\\test_0025_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0025_deg.wav",
+    "transcript": "if i applaud the freedom which its inhabitants enjoy he answers freedom is a fine thing but few nations are worthy to enjoy it",
+    "snr_db": -4.1,
+    "duration_sec": 8.69
+  },
+  {
+    "id": "test_0026",
+    "original_id": "7976-110124-0018",
+    "clean_path": "data\\simulated\\test\\clean\\test_0026_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0026_deg.wav",
+    "transcript": "the merchant's daughter at first did not answer but as he kept on calling to her she finally asked him what it was that he wanted",
+    "snr_db": 8.85,
+    "duration_sec": 8.07
+  },
+  {
+    "id": "test_0027",
+    "original_id": "7976-105575-0012",
+    "clean_path": "data\\simulated\\test\\clean\\test_0027_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0027_deg.wav",
+    "transcript": "he survived the war only to be murdered later on a plantation in mississippi",
+    "snr_db": 17.98,
+    "duration_sec": 5.16
+  },
+  {
+    "id": "test_0028",
+    "original_id": "2277-149896-0017",
+    "clean_path": "data\\simulated\\test\\clean\\test_0028_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0028_deg.wav",
+    "transcript": "at one thirty he went to rector's for lunch and when he returned a messenger was waiting for him",
+    "snr_db": -2.09,
+    "duration_sec": 4.99
+  },
+  {
+    "id": "test_0029",
+    "original_id": "7976-110124-0001",
+    "clean_path": "data\\simulated\\test\\clean\\test_0029_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0029_deg.wav",
+    "transcript": "every year at a certain day of a certain month he went away to a distant city to collect money on an account",
+    "snr_db": 14.75,
+    "duration_sec": 7.35
+  },
+  {
+    "id": "test_0030",
+    "original_id": "2277-149897-0002",
+    "clean_path": "data\\simulated\\test\\clean\\test_0030_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0030_deg.wav",
+    "transcript": "no letter had come no word of any kind and yet here it was late in the evening and she had agreed to meet him that morning",
+    "snr_db": 3.65,
+    "duration_sec": 6.54
+  },
+  {
+    "id": "test_0031",
+    "original_id": "2277-149896-0008",
+    "clean_path": "data\\simulated\\test\\clean\\test_0031_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0031_deg.wav",
+    "transcript": "for some reason he felt as if something might come that way and was relieved when all the envelopes had been scanned and nothing suspicious noticed",
+    "snr_db": 18.07,
+    "duration_sec": 6.94
+  },
+  {
+    "id": "test_0032",
+    "original_id": "2277-149896-0013",
+    "clean_path": "data\\simulated\\test\\clean\\test_0032_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0032_deg.wav",
+    "transcript": "he would get one to day it would probably be on his desk when he got back he would look for it at once",
+    "snr_db": 4.97,
+    "duration_sec": 6.09
+  },
+  {
+    "id": "test_0033",
+    "original_id": "7976-110124-0016",
+    "clean_path": "data\\simulated\\test\\clean\\test_0033_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0033_deg.wav",
+    "transcript": "it was the youngest one who deceived me cried the robber chieftain",
+    "snr_db": 19.08,
+    "duration_sec": 4.18
+  },
+  {
+    "id": "test_0034",
+    "original_id": "2277-149897-0017",
+    "clean_path": "data\\simulated\\test\\clean\\test_0034_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0034_deg.wav",
+    "transcript": "how about that now his pain at her failure to meet or write him rapidly increased as he devoted himself to this subject",
+    "snr_db": 5.99,
+    "duration_sec": 7.3
+  },
+  {
+    "id": "test_0035",
+    "original_id": "7976-110523-0012",
+    "clean_path": "data\\simulated\\test\\clean\\test_0035_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0035_deg.wav",
+    "transcript": "the old woman behaved very kindly to them but in reality she was a wicked old witch who way laid children and built the breadhouse in order to entice them in but as soon as they were in her power she killed them cooked and ate them and made a great festival of the day",
+    "snr_db": -1.2,
+    "duration_sec": 16.28
+  },
+  {
+    "id": "test_0036",
+    "original_id": "7976-110124-0017",
+    "clean_path": "data\\simulated\\test\\clean\\test_0036_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0036_deg.wav",
+    "transcript": "perhaps you can outwit her yet cried another",
+    "snr_db": -3.56,
+    "duration_sec": 2.69
+  },
+  {
+    "id": "test_0037",
+    "original_id": "2277-149897-0035",
+    "clean_path": "data\\simulated\\test\\clean\\test_0037_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0037_deg.wav",
+    "transcript": "very truly yours et cetera compromise",
+    "snr_db": 2.58,
+    "duration_sec": 3.45
+  },
+  {
+    "id": "test_0038",
+    "original_id": "2277-149896-0002",
+    "clean_path": "data\\simulated\\test\\clean\\test_0038_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0038_deg.wav",
+    "transcript": "hurstwood walked the floor mentally arranging the chief points of his situation",
+    "snr_db": 15.35,
+    "duration_sec": 4.83
+  },
+  {
+    "id": "test_0039",
+    "original_id": "2086-149220-0034",
+    "clean_path": "data\\simulated\\test\\clean\\test_0039_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0039_deg.wav",
+    "transcript": "if the original is still in the world i think he might defy the sun to make him look stern and hard",
+    "snr_db": -1.73,
+    "duration_sec": 5.91
+  },
+  {
+    "id": "test_0040",
+    "original_id": "1988-148538-0013",
+    "clean_path": "data\\simulated\\test\\clean\\test_0040_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0040_deg.wav",
+    "transcript": "they stand unmoved in their solitary greatness well assured that they are seen of all the world without any effort to show themselves off and that no one will attempt to drive them from that position",
+    "snr_db": 15.69,
+    "duration_sec": 10.4
+  },
+  {
+    "id": "test_0041",
+    "original_id": "2277-149896-0018",
+    "clean_path": "data\\simulated\\test\\clean\\test_0041_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0041_deg.wav",
+    "transcript": "his first impulse was to write but four words in reply go to the devil",
+    "snr_db": -4.52,
+    "duration_sec": 4.54
+  },
+  {
+    "id": "test_0042",
+    "original_id": "2277-149874-0013",
+    "clean_path": "data\\simulated\\test\\clean\\test_0042_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0042_deg.wav",
+    "transcript": "you could get home easy too it isn't very far",
+    "snr_db": -4.7,
+    "duration_sec": 3.16
+  },
+  {
+    "id": "test_0043",
+    "original_id": "2277-149897-0025",
+    "clean_path": "data\\simulated\\test\\clean\\test_0043_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0043_deg.wav",
+    "transcript": "he was quite certain now that she knew he was married and was angered at his perfidy",
+    "snr_db": -2.26,
+    "duration_sec": 4.29
+  },
+  {
+    "id": "test_0044",
+    "original_id": "2035-152373-0002",
+    "clean_path": "data\\simulated\\test\\clean\\test_0044_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0044_deg.wav",
+    "transcript": "it is pretty clear also that the last rally of druidism against christianity took place behind his banner on the plain of moira",
+    "snr_db": -1.25,
+    "duration_sec": 9.34
+  },
+  {
+    "id": "test_0045",
+    "original_id": "2035-147960-0008",
+    "clean_path": "data\\simulated\\test\\clean\\test_0045_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0045_deg.wav",
+    "transcript": "a faint fetid smell came from him and a thread of green liquid oozed from his crushed head",
+    "snr_db": 6.49,
+    "duration_sec": 6.21
+  },
+  {
+    "id": "test_0046",
+    "original_id": "1988-147956-0001",
+    "clean_path": "data\\simulated\\test\\clean\\test_0046_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0046_deg.wav",
+    "transcript": "occasionally one of the horses would tear off with his teeth a plant full of blossoms and walk along munching it the flowers nodding in time to his bites as he ate down toward them",
+    "snr_db": 12.2,
+    "duration_sec": 14.21
+  },
+  {
+    "id": "test_0047",
+    "original_id": "2035-147960-0004",
+    "clean_path": "data\\simulated\\test\\clean\\test_0047_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0047_deg.wav",
+    "transcript": "it was on one of these gravel beds that i met my adventure",
+    "snr_db": 6.54,
+    "duration_sec": 4.17
+  },
+  {
+    "id": "test_0048",
+    "original_id": "2035-147961-0018",
+    "clean_path": "data\\simulated\\test\\clean\\test_0048_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0048_deg.wav",
+    "transcript": "after the ceremony at the church the party went to a dinner given by the parents of the bride",
+    "snr_db": -3.33,
+    "duration_sec": 5.59
+  },
+  {
+    "id": "test_0049",
+    "original_id": "2277-149896-0006",
+    "clean_path": "data\\simulated\\test\\clean\\test_0049_clean.wav",
+    "degraded_path": "data\\simulated\\test\\degraded\\test_0049_deg.wav",
+    "transcript": "he could arrange that satisfactorily for carrie would be glad to wait if necessary",
+    "snr_db": -3.96,
+    "duration_sec": 4.97
+  }
+]

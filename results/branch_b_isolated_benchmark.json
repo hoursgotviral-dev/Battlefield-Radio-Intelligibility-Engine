@@ -1,0 +1,20 @@
+{
+  "num_clips": 50,
+  "peak_impulse_attenuation_db_mean": 1.55,
+  "crest_factor_reduction_db_mean": 0.18,
+  "pesq": {
+    "gunshot_corrupted_mean": 2.184,
+    "branch_b_enhanced_mean": 3.666,
+    "pesq_delta": 1.482
+  },
+  "stoi": {
+    "gunshot_corrupted_mean": 0.952,
+    "branch_b_enhanced_mean": 0.99,
+    "stoi_delta": 0.038
+  },
+  "wer": {
+    "gunshot_corrupted_mean": 0.074,
+    "branch_b_enhanced_mean": 0.081,
+    "wer_reduction": -0.008
+  }
+}

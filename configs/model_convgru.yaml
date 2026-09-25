@@ -17,7 +17,7 @@ deploy:
     dynamic_axes: {} # Must be static for Qualcomm AI Hub NPU compilation
     output_file: "artifacts/dummy_conv_gru.onnx"
   qualcomm_aihub:
-    device_name: "Snapdragon 8 Gen 3"
-    chipset: "qualcomm-snapdragon-8gen3"
-    target_runtime: "qnn_lib_aarch64_android" # QNN execution provider on Hexagon NPU
+    device_name: "Snapdragon X Elite"
+    chipset: "qualcomm-snapdragon-x-elite"
+    target_runtime: "qnn_lib_aarch64_windows" # QNN execution provider on Hexagon NPU (HP Snapdragon PC)
     precision: "fp16" # or int8

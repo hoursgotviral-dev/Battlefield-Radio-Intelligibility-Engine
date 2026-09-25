@@ -33,5 +33,5 @@ python deploy/test_onnx_runtime.py --onnx artifacts/dummy_conv_gru.onnx
 
 Submit compilation and profiling job to Qualcomm AI Hub:
 ```bash
-python deploy/aihub_compile_profile.py --onnx artifacts/dummy_conv_gru.onnx --device "Snapdragon 8 Gen 3"
+python deploy/aihub_compile_profile.py --onnx artifacts/branch_a_denoiser.onnx --device "Snapdragon X Elite"
 ```

@@ -15,7 +15,6 @@ import glob
 import numpy as np
 import soundfile as sf
 import torch
-from tabulate import tabulate if False else None
 
 from eval.metrics import compute_pesq, compute_stoi, compute_wer, WhisperEvaluator
 from data.simulation import BattlefieldAudioSimulator

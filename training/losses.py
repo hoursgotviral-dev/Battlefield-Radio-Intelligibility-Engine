@@ -99,3 +99,94 @@ class SISDRLoss(nn.Module):
 
         si_sdr = 10.0 * torch.log10(s_target_energy / e_noise_energy)
         return -torch.mean(si_sdr)
+
+
+class WhisperPerceptualLoss(nn.Module):
+    """
+    Computes perceptual distance in Whisper encoder embedding space.
+    Differentiably backpropagates phonetic and linguistic feature distance
+    to steer the speech enhancement model toward high ASR intelligibility.
+    """
+    def __init__(self, model_name: str = "openai/whisper-tiny", device: torch.device = torch.device("cpu")):
+        super().__init__()
+        self.device = device
+        from transformers import WhisperModel
+        import torchaudio.functional as F_audio
+
+        whisper = WhisperModel.from_pretrained(model_name).to(device)
+        self.encoder = whisper.encoder
+        self.encoder.eval()
+        for param in self.encoder.parameters():
+            param.requires_grad = False
+
+        self.n_fft = 400
+        self.hop_length = 160
+        self.n_mels = 80
+        self.register_buffer("window", torch.hann_window(self.n_fft))
+        mel_fb = F_audio.melscale_fbanks(
+            n_freqs=self.n_fft // 2 + 1,
+            f_min=0.0,
+            f_max=8000.0,
+            n_mels=self.n_mels,
+            sample_rate=16000,
+            norm="slaney",
+            mel_scale="slaney",
+        )
+        self.register_buffer("mel_fb", mel_fb)
+
+    def wav_to_log_mel(self, wav: torch.Tensor) -> torch.Tensor:
+        """Differentiable 80-channel log-Mel spectrogram matching Whisper specifications."""
+        wav = wav.squeeze(1) if wav.dim() == 3 else wav
+        window = torch.hann_window(self.n_fft, device=wav.device)
+        stft = torch.stft(
+            wav,
+            n_fft=self.n_fft,
+            hop_length=self.hop_length,
+            win_length=self.n_fft,
+            window=window,
+            return_complex=True,
+        )
+        pwr = torch.abs(stft[:, :, :-1]) ** 2
+        mel_spec = torch.matmul(self.mel_fb.to(wav.device).transpose(0, 1), pwr)
+        log_mel = torch.clamp(mel_spec, min=1e-10).log10()
+        log_mel = torch.maximum(log_mel, log_mel.max() - 8.0)
+        log_mel = (log_mel + 4.0) / 4.0
+
+        target_frames = 3000
+        B, n_m, T_f = log_mel.shape
+        if T_f < target_frames:
+            log_mel = torch.nn.functional.pad(log_mel, (0, target_frames - T_f))
+        else:
+            log_mel = log_mel[:, :, :target_frames]
+        return log_mel
+
+    def forward(self, enh_wav: torch.Tensor, clean_wav: torch.Tensor) -> torch.Tensor:
+        mel_enh = self.wav_to_log_mel(enh_wav)
+        with torch.no_grad():
+            mel_clean = self.wav_to_log_mel(clean_wav)
+            feat_clean = self.encoder(mel_clean).last_hidden_state
+
+        feat_enh = self.encoder(mel_enh).last_hidden_state
+        return torch.mean(torch.abs(feat_enh - feat_clean))
+
+
+class EnergyFloorLoss(nn.Module):
+    """
+    Prevents over-aggressive suppression / energy collapse under low SNR (< 2 dB).
+    Penalizes enhanced audio if its total energy falls below a safe minimum ratio
+    of the input degraded energy.
+    """
+    def __init__(self, min_ratio: float = 0.28):
+        super().__init__()
+        self.min_ratio = min_ratio
+
+    def forward(self, enh_audio: torch.Tensor, deg_audio: torch.Tensor) -> torch.Tensor:
+        enh_audio = enh_audio.squeeze(1) if enh_audio.dim() == 3 else enh_audio
+        deg_audio = deg_audio.squeeze(1) if deg_audio.dim() == 3 else deg_audio
+        e_enh = torch.sum(enh_audio ** 2, dim=-1) + 1e-8
+        e_deg = torch.sum(deg_audio ** 2, dim=-1) + 1e-8
+        ratio = e_enh / e_deg
+        penalty = torch.relu(self.min_ratio - ratio) ** 2
+        return torch.mean(penalty)
+
+
