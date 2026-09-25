@@ -77,8 +77,9 @@ def test_branch_b_impulse():
     """Verify Branch B impulse suppressor."""
     branch_b = BranchBImpulse(freq_bins=257, channels=16, hidden_dim=32)
     x = torch.randn(1, 1, 257, 4)
-    mask, feat = branch_b(x)
+    mask, prob, next_state = branch_b(x)
     assert mask.shape == (1, 1, 257, 4)
+    assert prob.shape == (1, 1, 4)
     assert (mask >= 0.0).all() and (mask <= 1.0).all()
 
 
@@ -103,8 +104,8 @@ def test_fused_battlefield_model():
         context_dim=16,
     )
     x = torch.randn(1, 1, 257, 4)
-    h = fused.init_hidden_state(batch_size=1)
-    enh, h_out, est_snr = fused(x, h)
+    h_a, state_b = fused.init_hidden_states(batch_size=1)
+    enh, mask, h_a_out, state_b_out, est_snr = fused(x, h_a, state_b)
     assert enh.shape == (1, 1, 257, 4)
-    assert h_out.shape == (1, 1, 32)
+    assert h_a_out.shape == (1, 1, 32)
     assert est_snr.shape == (1, 1)

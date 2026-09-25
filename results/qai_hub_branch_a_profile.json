@@ -1,0 +1,1839 @@
+{
+  "job_id": "jg9zoz9qp",
+  "url": "https://workbench.aihub.qualcomm.com/jobs/jg9zoz9qp/",
+  "profile": {
+    "execution_summary": {
+      "estimated_inference_time": 389,
+      "estimated_inference_peak_memory": 14495744,
+      "first_load_time": 1643501,
+      "first_load_peak_memory": 175947776,
+      "warm_load_time": 201031,
+      "warm_load_peak_memory": 14684160,
+      "compile_time": 0,
+      "compile_peak_memory": 0,
+      "compile_memory_increase_range": [
+        0,
+        0
+      ],
+      "compile_memory_peak_range": [
+        0,
+        0
+      ],
+      "first_load_memory_increase_range": [
+        156106752,
+        156106752
+      ],
+      "first_load_memory_peak_range": [
+        171003904,
+        171003904
+      ],
+      "warm_load_memory_increase_range": [
+        9781248,
+        9781248
+      ],
+      "warm_load_memory_peak_range": [
+        9781248,
+        9781248
+      ],
+      "inference_memory_increase_range": [
+        16384,
+        16384
+      ],
+      "inference_memory_peak_range": [
+        528384,
+        528384
+      ],
+      "all_compile_times": [],
+      "all_first_load_times": [
+        1643501
+      ],
+      "all_warm_load_times": [
+        201031
+      ],
+      "all_inference_times": [
+        1637,
+        414,
+        391,
+        418,
+        437,
+        416,
+        401,
+        396,
+        415,
+        413,
+        395,
+        416,
+        427,
+        421,
+        457,
+        420,
+        412,
+        439,
+        393,
+        400,
+        413,
+        415,
+        414,
+        411,
+        396,
+        408,
+        412,
+        389,
+        390,
+        398,
+        420,
+        416,
+        409,
+        410,
+        427,
+        427,
+        692,
+        455,
+        452,
+        456,
+        457,
+        412,
+        411,
+        411,
+        423,
+        410,
+        410,
+        464,
+        419,
+        531,
+        418,
+        410,
+        410,
+        559,
+        424,
+        414,
+        421,
+        414,
+        421,
+        418,
+        407,
+        407,
+        408,
+        420,
+        405,
+        408,
+        410,
+        412,
+        412,
+        409,
+        407,
+        417,
+        405,
+        407,
+        409,
+        417,
+        398,
+        411,
+        408,
+        448,
+        416,
+        407,
+        414,
+        417,
+        408,
+        415,
+        410,
+        409,
+        407,
+        410,
+        409,
+        392,
+        410,
+        409,
+        417,
+        415,
+        405,
+        518,
+        413,
+        537
+      ]
+    },
+    "execution_detail": [
+      {
+        "name": "Input",
+        "type": "Input",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 3762
+      },
+      {
+        "name": "input_chunk_0231",
+        "type": "input",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 18660
+      },
+      {
+        "name": "/denoiser/conv1/conv/Conv",
+        "type": "/denoiser/conv1/conv/Conv",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/act1/PRelu",
+        "type": "/denoiser/act1/PRelu",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 10027
+      },
+      {
+        "name": "/denoiser/conv2/conv/Conv",
+        "type": "/denoiser/conv2/conv/Conv",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/act2/PRelu",
+        "type": "/denoiser/act2/PRelu",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 12330
+      },
+      {
+        "name": "/denoiser/Transpose",
+        "type": "/denoiser/Transpose",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 33403
+      },
+      {
+        "name": "node_Reshape_10",
+        "type": "node",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "node_Split_9_to_slice_0",
+        "type": "node",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 6878
+      },
+      {
+        "name": "node_Split_9_to_slice_1",
+        "type": "node",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 4524
+      },
+      {
+        "name": "/denoiser/gru/Transpose_output_0_102",
+        "type": "/denoiser/gru/Transpose",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 6730
+      },
+      {
+        "name": "/denoiser/gru/GRU_/denoiser/gru/Transpose_output_0_102_split",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_0_/denoiser/gru/GRU_/denoiser/gru/Transpose_output_0_1020_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_0_val_4_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_0_xt_wz_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_0_ht_1_rz_matmul_op_name",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_0_elementsum_of_term1_part1_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_0_control_gate_b",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_0_elementsum_of_term1_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 41264
+      },
+      {
+        "name": "/denoiser/gru/GRU_0_activation_update_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 22027
+      },
+      {
+        "name": "/denoiser/gru/GRU_0_xt_wr_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_0_ht_1_rr_matmul_op_name",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_0_elementsum_of_term2_part1_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_0_reset_gate_b",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_0_elementsum_of_term2_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 26118
+      },
+      {
+        "name": "/denoiser/gru/GRU_0_activation_reset_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 14382
+      },
+      {
+        "name": "/denoiser/gru/GRU_0_xt_wh_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_0_xt_wh_wbh_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_0_ht_1_rh_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_0_ht_1_rh_rbh_matmul_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 5610
+      },
+      {
+        "name": "/denoiser/gru/GRU_0_rt_dot_ht_1_rh_rbh_matmul_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 156
+      },
+      {
+        "name": "/denoiser/gru/GRU_0_elementsum_of_term3p2_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 2692
+      },
+      {
+        "name": "/denoiser/gru/GRU_0_activation_rec_gate_term3p2_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 17680
+      },
+      {
+        "name": "/denoiser/gru/GRU_0_one_minus_zt_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 7781
+      },
+      {
+        "name": "/denoiser/gru/GRU_0_one_minus_zt_dot_ht_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 164
+      },
+      {
+        "name": "/denoiser/gru/GRU_0_zt_dot_ht_1_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 1571
+      },
+      {
+        "name": "/denoiser/gru/GRU_0_elementsum_of_term4_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 5173
+      },
+      {
+        "name": "/denoiser/gru/Squeeze_output_00_reshape",
+        "type": "/denoiser/gru/Squeeze",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_output_10_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1__926126_/denoiser/gru/GRU_/denoiser/gru/Transpose_output_0_1021_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1__926126_/denoiser/gru/GRU_output_10_reshape_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1__926126_xt_wz_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1__926126_ht_1_rz_matmul_op_name",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1__926126_elementsum_of_term1_part1_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1__926126_control_gate_b",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1__926126_elementsum_of_term1_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 766
+      },
+      {
+        "name": "/denoiser/gru/GRU_1__926126_activation_update_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 14165
+      },
+      {
+        "name": "/denoiser/gru/GRU_1__926126_xt_wr_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1__926126_ht_1_rr_matmul_op_name",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1__926126_elementsum_of_term2_part1_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1__926126_reset_gate_b",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1__926126_elementsum_of_term2_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 759
+      },
+      {
+        "name": "/denoiser/gru/GRU_1__926126_activation_reset_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 14051
+      },
+      {
+        "name": "/denoiser/gru/GRU_1__926126_xt_wh_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1__926126_xt_wh_wbh_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1__926126_ht_1_rh_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1__926126_ht_1_rh_rbh_matmul_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 275
+      },
+      {
+        "name": "/denoiser/gru/GRU_1__926126_rt_dot_ht_1_rh_rbh_matmul_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 116
+      },
+      {
+        "name": "/denoiser/gru/GRU_1__926126_elementsum_of_term3p2_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 1793
+      },
+      {
+        "name": "/denoiser/gru/GRU_1__926126_activation_rec_gate_term3p2_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 15186
+      },
+      {
+        "name": "/denoiser/gru/GRU_1__926126_one_minus_zt_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 816
+      },
+      {
+        "name": "/denoiser/gru/GRU_1__926126_one_minus_zt_dot_ht_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 176
+      },
+      {
+        "name": "/denoiser/gru/GRU_1__926126_zt_dot_ht_1_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 187
+      },
+      {
+        "name": "/denoiser/gru/GRU_1__926126_elementsum_of_term4_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 320
+      },
+      {
+        "name": "/denoiser/gru/Squeeze_output_01_reshape",
+        "type": "/denoiser/gru/Squeeze",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_output_11_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_2_/denoiser/gru/GRU_/denoiser/gru/Transpose_output_0_1022_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_2_/denoiser/gru/GRU_output_11_reshape_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_2_xt_wz_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_2_ht_1_rz_matmul_op_name",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_2_elementsum_of_term1_part1_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_2_control_gate_b",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_2_elementsum_of_term1_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 770
+      },
+      {
+        "name": "/denoiser/gru/GRU_2_activation_update_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 14088
+      },
+      {
+        "name": "/denoiser/gru/GRU_2_xt_wr_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_2_ht_1_rr_matmul_op_name",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_2_elementsum_of_term2_part1_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_2_reset_gate_b",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_2_elementsum_of_term2_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 712
+      },
+      {
+        "name": "/denoiser/gru/GRU_2_activation_reset_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 14006
+      },
+      {
+        "name": "/denoiser/gru/GRU_2_xt_wh_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_2_xt_wh_wbh_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_2_ht_1_rh_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_2_ht_1_rh_rbh_matmul_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 262
+      },
+      {
+        "name": "/denoiser/gru/GRU_2_rt_dot_ht_1_rh_rbh_matmul_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 145
+      },
+      {
+        "name": "/denoiser/gru/GRU_2_elementsum_of_term3p2_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 1772
+      },
+      {
+        "name": "/denoiser/gru/GRU_2_activation_rec_gate_term3p2_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 15256
+      },
+      {
+        "name": "/denoiser/gru/GRU_2_one_minus_zt_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 802
+      },
+      {
+        "name": "/denoiser/gru/GRU_2_one_minus_zt_dot_ht_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 176
+      },
+      {
+        "name": "/denoiser/gru/GRU_2_zt_dot_ht_1_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 164
+      },
+      {
+        "name": "/denoiser/gru/GRU_2_elementsum_of_term4_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 256
+      },
+      {
+        "name": "/denoiser/gru/Squeeze_output_02_reshape",
+        "type": "/denoiser/gru/Squeeze",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_output_12_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_3_/denoiser/gru/GRU_/denoiser/gru/Transpose_output_0_1023_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_3_/denoiser/gru/GRU_output_12_reshape_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_3_xt_wz_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_3_ht_1_rz_matmul_op_name",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_3_elementsum_of_term1_part1_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_3_control_gate_b",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_3_elementsum_of_term1_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 822
+      },
+      {
+        "name": "/denoiser/gru/GRU_3_activation_update_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 14057
+      },
+      {
+        "name": "/denoiser/gru/GRU_3_xt_wr_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_3_ht_1_rr_matmul_op_name",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_3_elementsum_of_term2_part1_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_3_reset_gate_b",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_3_elementsum_of_term2_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 707
+      },
+      {
+        "name": "/denoiser/gru/GRU_3_activation_reset_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 13977
+      },
+      {
+        "name": "/denoiser/gru/GRU_3_xt_wh_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_3_xt_wh_wbh_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_3_ht_1_rh_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_3_ht_1_rh_rbh_matmul_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 247
+      },
+      {
+        "name": "/denoiser/gru/GRU_3_rt_dot_ht_1_rh_rbh_matmul_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 139
+      },
+      {
+        "name": "/denoiser/gru/GRU_3_elementsum_of_term3p2_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 1794
+      },
+      {
+        "name": "/denoiser/gru/GRU_3_activation_rec_gate_term3p2_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 15050
+      },
+      {
+        "name": "/denoiser/gru/GRU_3_one_minus_zt_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 770
+      },
+      {
+        "name": "/denoiser/gru/GRU_3_one_minus_zt_dot_ht_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 193
+      },
+      {
+        "name": "/denoiser/gru/GRU_3_zt_dot_ht_1_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 181
+      },
+      {
+        "name": "/denoiser/gru/GRU_3_elementsum_of_term4_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 303
+      },
+      {
+        "name": "/denoiser/gru/Squeeze_output_03_reshape",
+        "type": "/denoiser/gru/Squeeze",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_output_13_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_/denoiser/gru/Squeeze_output_0_concat",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_/denoiser/gru/Squeeze_output_0_concat_split",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_0_/denoiser/gru/GRU_1_/denoiser/gru/Squeeze_output_0_concat0_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_0_val_5_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_0_xt_wz_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_0_ht_1_rz_matmul_op_name",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_0_elementsum_of_term1_part1_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_0_control_gate_b",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_0_elementsum_of_term1_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 15565
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_0_activation_update_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 9083
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_0_xt_wr_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_0_ht_1_rr_matmul_op_name",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_0_elementsum_of_term2_part1_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_0_reset_gate_b",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_0_elementsum_of_term2_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 16141
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_0_activation_reset_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 9027
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_0_xt_wh_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_0_xt_wh_wbh_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_0_ht_1_rh_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_0_ht_1_rh_rbh_matmul_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 3843
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_0_rt_dot_ht_1_rh_rbh_matmul_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 153
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_0_elementsum_of_term3p2_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 2436
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_0_activation_rec_gate_term3p2_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 10183
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_0_one_minus_zt_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 897
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_0_one_minus_zt_dot_ht_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 156
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_0_zt_dot_ht_1_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 223
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_0_elementsum_of_term4_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 224
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_output_0_all_hidden_rnn0_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_output_10_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_1_/denoiser/gru/GRU_1_/denoiser/gru/Squeeze_output_0_concat1_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_1_/denoiser/gru/GRU_1_output_10_reshape_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_1_xt_wz_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_1_ht_1_rz_matmul_op_name",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_1_elementsum_of_term1_part1_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_1_control_gate_b",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_1_elementsum_of_term1_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 783
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_1_activation_update_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 8635
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_1_xt_wr_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_1_ht_1_rr_matmul_op_name",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_1_elementsum_of_term2_part1_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_1_reset_gate_b",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_1_elementsum_of_term2_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 711
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_1_activation_reset_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 8619
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_1_xt_wh_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_1_xt_wh_wbh_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_1_ht_1_rh_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_1_ht_1_rh_rbh_matmul_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 203
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_1_rt_dot_ht_1_rh_rbh_matmul_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 161
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_1_elementsum_of_term3p2_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 1923
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_1_activation_rec_gate_term3p2_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 9841
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_1_one_minus_zt_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 924
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_1_one_minus_zt_dot_ht_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 151
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_1_zt_dot_ht_1_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 158
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_1_elementsum_of_term4_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 225
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_output_0_all_hidden_rnn1_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_output_11_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_2_/denoiser/gru/GRU_1_/denoiser/gru/Squeeze_output_0_concat2_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_2_/denoiser/gru/GRU_1_output_11_reshape_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_2_xt_wz_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_2_ht_1_rz_matmul_op_name",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_2_elementsum_of_term1_part1_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_2_control_gate_b",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_2_elementsum_of_term1_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 983
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_2_activation_update_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 8897
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_2_xt_wr_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_2_ht_1_rr_matmul_op_name",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_2_elementsum_of_term2_part1_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_2_reset_gate_b",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_2_elementsum_of_term2_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 728
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_2_activation_reset_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 8797
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_2_xt_wh_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_2_xt_wh_wbh_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_2_ht_1_rh_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_2_ht_1_rh_rbh_matmul_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 208
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_2_rt_dot_ht_1_rh_rbh_matmul_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 160
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_2_elementsum_of_term3p2_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 1837
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_2_activation_rec_gate_term3p2_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 10209
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_2_one_minus_zt_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 875
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_2_one_minus_zt_dot_ht_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 170
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_2_zt_dot_ht_1_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 165
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_2_elementsum_of_term4_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 223
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_output_0_all_hidden_rnn2_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_output_12_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_3_/denoiser/gru/GRU_1_/denoiser/gru/Squeeze_output_0_concat3_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_3_/denoiser/gru/GRU_1_output_12_reshape_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_3_xt_wz_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_3_ht_1_rz_matmul_op_name",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_3_elementsum_of_term1_part1_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_3_control_gate_b",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_3_elementsum_of_term1_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 756
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_3_activation_update_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 8621
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_3_xt_wr_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_3_ht_1_rr_matmul_op_name",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_3_elementsum_of_term2_part1_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_3_reset_gate_b",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_3_elementsum_of_term2_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 737
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_3_activation_reset_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 8564
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_3_xt_wh_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_3_xt_wh_wbh_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_3_ht_1_rh_matmul_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_3_ht_1_rh_rbh_matmul_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 202
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_3_rt_dot_ht_1_rh_rbh_matmul_bias_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 147
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_3_elementsum_of_term3p2_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 2000
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_3_activation_rec_gate_term3p2_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 9682
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_3_one_minus_zt_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 777
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_3_one_minus_zt_dot_ht_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 157
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_3_zt_dot_ht_1_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 160
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_3_elementsum_of_term4_op",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 234
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_output_0_all_hidden_rnn3_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_output_13_reshape",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_/denoiser/gru/GRU_1_output_0_all_hidden_rnn_concat",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 9732
+      },
+      {
+        "name": "/denoiser/gru/Concat",
+        "type": "/denoiser/gru/Concat",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/gru/GRU_1_output_0_all_hidden_rnn_012",
+        "type": "/denoiser/gru/GRU",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/out_proj/out_proj.0/MatMul",
+        "type": "/denoiser/out",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/out_proj/out_proj.0/MatMul_post_reshape",
+        "type": "/denoiser/out",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/denoiser/out_proj/out_proj.1/Sigmoid",
+        "type": "/denoiser/out",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 2604
+      },
+      {
+        "name": "/denoiser/Transpose_1",
+        "type": "/denoiser/Transpose",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 2398
+      },
+      {
+        "name": "/denoiser/Unsqueeze",
+        "type": "/denoiser/Unsqueeze",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 0
+      },
+      {
+        "name": "/Mul",
+        "type": "/Mul",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 22966
+      },
+      {
+        "name": "Output",
+        "type": "Output",
+        "compute_unit": "NPU",
+        "execution_time": 0,
+        "execution_cycles": 15479
+      }
+    ]
+  }
+}

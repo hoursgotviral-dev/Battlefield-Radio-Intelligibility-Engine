@@ -1,0 +1,58 @@
+{
+  "system": "Battlefield Radio Intelligibility Engine",
+  "deployment_target": "Snapdragon X Elite (HP Snapdragon Copilot+ PC)",
+  "runtime": "QNN execution provider (qnn_lib_aarch64_windows)",
+  "ablation_summary": [
+    {
+      "stage": "1. Degraded Radio Input",
+      "architecture": "Tactical Radio Channel (Codec2 2400bps + PTT Clipping + Continuous Rumble)",
+      "deployable_on_snapdragon_npu": "N/A",
+      "pesq_wb": 1.152,
+      "stoi": 0.739,
+      "whisper_median_wer": 0.364,
+      "whisper_clipped_mean_wer": 0.425,
+      "whisper_raw_mean_wer": 0.443,
+      "outlier_count_wer_gt_1": 3,
+      "status": "Baseline Input"
+    },
+    {
+      "stage": "2. DeepFilterNet3 (Guarded)",
+      "architecture": "DeepFilterNet3 (Complex ERB + Deep Filtering)",
+      "deployable_on_snapdragon_npu": false,
+      "deployment_blockers": "Complex dynamic STFT slicing, unsupported ERB filterbank ops on HTP, non-static graph",
+      "pesq_wb": 1.785,
+      "stoi": 0.798,
+      "whisper_median_wer": 0.363,
+      "whisper_clipped_mean_wer": 0.420,
+      "whisper_raw_mean_wer": 0.433,
+      "outlier_count_wer_gt_1": 2,
+      "status": "Academic Reference (Non-Deployable)"
+    },
+    {
+      "stage": "3. Branch A Alone (Guarded)",
+      "architecture": "Causal ConvGRU (32ch, 64 hidden, 2 layers) + Soft-Blend Reliability Guard",
+      "deployable_on_snapdragon_npu": true,
+      "target_device": "Snapdragon X Elite (Hexagon NPU)",
+      "onnx_chunk_latency_ms": 0.77,
+      "real_time_factor": 0.0271,
+      "pesq_wb": 1.232,
+      "stoi": 0.758,
+      "whisper_median_wer": 0.353,
+      "whisper_clipped_mean_wer": 0.396,
+      "whisper_raw_mean_wer": 0.409,
+      "outlier_count_wer_gt_1": 3,
+      "status": "Shipped & Deployed Production Model"
+    },
+    {
+      "stage": "4. Branch B Standalone (Impulse Suppressor)",
+      "architecture": "Causal Transient CNN + GLU Gating + Instantaneous Flux Attenuation",
+      "deployable_on_snapdragon_npu": true,
+      "evaluation_scenario": "Full Radio Channel + High-SPL Gunfire Bursts (50 clips)",
+      "peak_gunfire_attenuation_db": 1.48,
+      "pesq_wb_with_gunfire": "1.082 -> 1.106 (+0.024)",
+      "stoi_with_gunfire": "0.628 -> 0.655 (+0.027)",
+      "whisper_wer_with_gunfire": "0.710 -> 0.455 (-0.255 WER reduction)",
+      "status": "Validated Standalone Module (Gunfire Capability, Future Integration)"
+    }
+  ]
+}

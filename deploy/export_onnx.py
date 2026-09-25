@@ -1,29 +1,70 @@
 """
-ONNX Export Utility for Streaming Speech Enhancement Models.
+ONNX Export Utility for Branch A (Continuous Causal ConvGRU Denoiser).
 
-ML Concept - Static Graph Freezing for Snapdragon NPU:
+ML Concept - Static Graph Freezing for Qualcomm Hexagon NPU:
 Edge NPUs such as the Qualcomm Hexagon Processor compile neural networks into ahead-of-time (AOT)
 optimized hardware binaries using Qualcomm AI Hub / QNN SDK. Dynamic tensor dimensions
-(e.g., variable time length or batch sizes) degrade NPU compiler scheduling efficiency and can cause
-compilation failures. 
+degrade NPU compiler scheduling efficiency and cause compilation failures.
 
-This exporter freezes the model with static, predetermined chunk shapes (e.g. 1 chunk = 4 time frames),
-exposes explicit recurrent hidden states as named input/output ports, and validates the resulting ONNX graph.
+This exporter freezes the trained Branch A model with static chunk shapes (1 chunk = 4 time frames = 32 ms),
+exposes explicit recurrent hidden states (h_in / h_out) as named input/output ports,
+and validates the resulting ONNX graph for QNN execution.
 """
 
 import os
+import sys
+
+# Ensure UTF-8 stdout/stderr on Windows
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8")
+
 import argparse
 from pathlib import Path
-import yaml
+from typing import Tuple
 import torch
+import torch.nn as nn
 import onnx
 
-from models.dummy_conv_gru import DummyStreamingConvGRU
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from models.branch_a_denoiser import BranchADenoiser
 
 
-def export_model_to_onnx(
-    model: torch.nn.Module,
-    output_path: str,
+class StreamingBranchAEngine(nn.Module):
+    """
+    Streaming production wrapper for Branch A Causal ConvGRU Denoiser.
+    Applies estimated spectral gain mask directly to input chunk.
+    Exposes explicit static recurrent states for Snapdragon NPU execution.
+    """
+    def __init__(self, denoiser: BranchADenoiser):
+        super().__init__()
+        self.denoiser = denoiser
+
+    def forward(
+        self,
+        input_chunk: torch.Tensor,
+        h_in: torch.Tensor,
+    ) -> Tuple[torch.Tensor, torch.Tensor]:
+        """
+        Args:
+            input_chunk: [1, 1, 257, 4] static streaming chunk
+            h_in: [2, 1, 64] recurrent hidden state
+        Returns:
+            enhanced_chunk: [1, 1, 257, 4] enhanced magnitude chunk
+            h_out: [2, 1, 64] updated hidden state
+        """
+        mask, _, h_out = self.denoiser(input_chunk, h_in)
+        enhanced_chunk = input_chunk * mask
+        return enhanced_chunk, h_out
+
+
+def export_branch_a_onnx(
+    checkpoint_path: str = "checkpoints/branch_a_curriculum_best.pt",
+    output_path: str = "artifacts/branch_a_denoiser.onnx",
     freq_bins: int = 257,
     chunk_frames: int = 4,
     hidden_dim: int = 64,
@@ -31,33 +72,35 @@ def export_model_to_onnx(
     batch_size: int = 1,
     opset_version: int = 17,
 ) -> str:
-    """
-    Exports a streaming stateful model to static ONNX format.
-
-    Args:
-        model: PyTorch model instance
-        output_path: Target .onnx filepath
-        freq_bins: Number of frequency bins (e.g., 257 for 512-pt STFT)
-        chunk_frames: Number of time frames in streaming chunk
-        hidden_dim: GRU hidden dimension
-        num_layers: Number of GRU layers
-        batch_size: Batch size (fixed to 1 for edge streaming)
-        opset_version: ONNX opset version (17 recommended for AI Hub)
-
-    Returns:
-        output_path: Path to exported ONNX model
-    """
-    model.eval()
+    """Exports trained Branch A denoiser to static ONNX for Qualcomm AI Hub."""
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
 
-    # Prepare dummy inputs with exact static shapes
+    denoiser = BranchADenoiser(
+        freq_bins=freq_bins,
+        channels=32,
+        hidden_dim=hidden_dim,
+        num_layers=num_layers,
+    )
+
+    if os.path.exists(checkpoint_path):
+        ckpt = torch.load(checkpoint_path, map_location="cpu", weights_only=False)
+        sd = ckpt.get("model_state_dict", ckpt)
+        denoiser.load_state_dict(sd)
+        print(f"[+] Loaded trained Branch A weights from: {checkpoint_path}")
+    else:
+        print(f"[!] Warning: Checkpoint {checkpoint_path} not found. Exporting with initial weights.")
+
+    model = StreamingBranchAEngine(denoiser)
+    model.eval()
+
+    # Exact static inputs
     dummy_input_chunk = torch.randn(batch_size, 1, freq_bins, chunk_frames, dtype=torch.float32)
     dummy_h_in = torch.zeros(num_layers, batch_size, hidden_dim, dtype=torch.float32)
 
     input_names = ["input_chunk", "h_in"]
     output_names = ["enhanced_chunk", "h_out"]
 
-    print(f"[*] Exporting PyTorch model to ONNX -> {output_path}")
+    print(f"[*] Exporting Branch A PyTorch model to ONNX -> {output_path}")
     print(f"    - Input chunk shape: {tuple(dummy_input_chunk.shape)}")
     print(f"    - Hidden state in shape: {tuple(dummy_h_in.shape)}")
     print(f"    - Opset version: {opset_version}")
@@ -72,54 +115,33 @@ def export_model_to_onnx(
         input_names=input_names,
         output_names=output_names,
         dynamic_axes=None,  # Strictly static for Qualcomm AI Hub NPU compilation
+        dynamo=False,
     )
 
-    # Check ONNX validity
-    onnx_model = onnx.load(output_path)
-    onnx.checker.check_model(onnx_model)
-    print(f"[+] ONNX model successfully verified with onnx.checker!")
+    # Ensure all tensor data is self-contained inside the ONNX file
+    onnx_model = onnx.load(output_path, load_external_data=True)
+    onnx.save(onnx_model, output_path, save_as_external_data=False)
+    onnx.checker.check_model(output_path, full_check=True)
+    print(f"[+] Branch A ONNX model successfully verified with full_check=True (Size: {Path(output_path).stat().st_size / 1024:.1f} KB)!")
     return output_path
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Export streaming speech enhancement model to ONNX.")
-    parser.add_argument("--config", type=str, default="configs/model_convgru.yaml", help="Path to config YAML")
-    parser.add_argument("--output", type=str, default="artifacts/dummy_conv_gru.onnx", help="Output ONNX path")
+    parser = argparse.ArgumentParser(description="Export Branch A streaming speech enhancement model to ONNX.")
+    parser.add_argument("--checkpoint", type=str, default="checkpoints/branch_a_curriculum_best.pt", help="Path to checkpoint")
+    parser.add_argument("--output", type=str, default="artifacts/branch_a_denoiser.onnx", help="Output ONNX path")
+    parser.add_argument("--opset", type=int, default=17, help="ONNX opset version")
     args = parser.parse_args()
 
-    config = {}
-    if os.path.exists(args.config):
-        with open(args.config, "r") as f:
-            config = yaml.safe_load(f)
-
-    model_cfg = config.get("model", {})
-    freq_bins = model_cfg.get("freq_bins", 257)
-    conv_channels = model_cfg.get("conv_channels", 32)
-    gru_hidden_dim = model_cfg.get("gru_hidden_dim", 64)
-    num_gru_layers = model_cfg.get("num_gru_layers", 2)
-    chunk_frames = model_cfg.get("streaming_chunk_frames", 4)
-
-    deploy_cfg = config.get("deploy", {}).get("onnx_export", {})
-    opset = deploy_cfg.get("opset", 17)
-    out_file = args.output or deploy_cfg.get("output_file", "artifacts/dummy_conv_gru.onnx")
-
-    model = DummyStreamingConvGRU(
-        freq_bins=freq_bins,
-        conv_channels=conv_channels,
-        gru_hidden_dim=gru_hidden_dim,
-        num_gru_layers=num_gru_layers,
+    export_branch_a_onnx(
+        checkpoint_path=args.checkpoint,
+        output_path=args.output,
+        opset_version=args.opset,
     )
 
-    export_model_to_onnx(
-        model=model,
-        output_path=out_file,
-        freq_bins=freq_bins,
-        chunk_frames=chunk_frames,
-        hidden_dim=gru_hidden_dim,
-        num_layers=num_gru_layers,
-        batch_size=1,
-        opset_version=opset,
-    )
+
+# Backward compatibility alias
+export_model_to_onnx = export_branch_a_onnx
 
 
 if __name__ == "__main__":
