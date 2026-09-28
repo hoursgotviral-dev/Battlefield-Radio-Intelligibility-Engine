@@ -14,7 +14,7 @@ transients frame-by-frame while preserving underlying speech formants.
 from typing import Tuple, Optional
 import torch
 import torch.nn as nn
-from models.dummy_conv_gru import CausalConv2d
+from models.conv_blocks import CausalConv2d
 
 
 class BranchBImpulse(nn.Module):

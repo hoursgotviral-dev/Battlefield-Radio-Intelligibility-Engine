@@ -54,3 +54,26 @@ def test_evaluate_audio_pair():
     assert "stoi_enhanced" in res
     assert isinstance(res["stoi_enhanced"], float)
 
+
+def test_spectral_postfilter():
+    """Verify spectral post-filter runs without crashing and preserves audio length."""
+    from eval.spectral_postfilter import SpectralPostFilter
+    pf = SpectralPostFilter()
+    audio = np.random.randn(16000).astype(np.float32) * 0.1
+    out = pf.process(audio)
+    assert len(out) == len(audio)
+    assert np.isfinite(out).all()
+
+
+def test_reliability_guard():
+    """Verify reliability guard computes metrics and applies soft blending."""
+    from eval.reliability_guard import ReliabilityGuard
+    guard = ReliabilityGuard()
+    deg = np.random.randn(16000).astype(np.float32) * 0.1
+    enh = deg * 0.9  # Mild attenuation
+    guarded, is_safe, conf, triggers = guard.apply_guard(deg, enh, mode="soft")
+    assert len(guarded) == len(deg)
+    assert 0.0 <= conf <= 1.0
+    assert np.isfinite(guarded).all()
+
+

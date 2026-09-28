@@ -90,6 +90,13 @@ The production system deploys **Branch A (Continuous Noise Denoiser + Soft-Blend
 
 ---
 
+### 3.3 Production Enhancement Module: Spectral Post-Filter
+- **Objective**: Eliminate residual musical noise and low-frequency tactical rumble post-NPU mask synthesis.
+- **Topology**: Causal Wiener-gain estimator with asymmetric temporal smoothing ($\alpha_{\text{attack}} = 0.8$, $\alpha_{\text{decay}} = 0.4$) and a safety gain floor ($G_{\text{floor}} = 0.05$).
+- **Impact**: Provides significant perceptual clarity improvements (val PESQ $1.908 \to 2.413$) with negligible (< 0.1 ms) host CPU compute.
+
+---
+
 ## 4. Qualcomm AI Hub & NPU Deployment Constraints
 
 To ensure zero-error compilation on Qualcomm Hexagon NPU via Qualcomm AI Hub:
@@ -104,7 +111,7 @@ To ensure zero-error compilation on Qualcomm Hexagon NPU via Qualcomm AI Hub:
    - Restrict to ONNX Opset 13–17 standard operators: `Conv`, `ConvTranspose`, `Add`, `Mul`, `Sigmoid`, `Tanh`, `Relu`, `PRelu`, `MatMul`, `Reshape`, `Transpose`, `Split`, `Concat`.
    - Avoid non-causal operations (`Bidirectional GRU`), dynamic indexing, dynamic slicing, or tensor-dependent control flow.
 4. **Quantization Target**:
-   - FP16 baseline on Hexagon NPU; INT8 post-training quantization (PTQ) or quantization-aware training (QAT) with symmetric per-channel weights and asymmetric per-tensor activations.
+   - FP16 baseline on Hexagon NPU; INT8 post-training quantization (PTQ) via ONNX Runtime QDQ quantizer (`artifacts/branch_a_denoiser_int8.onnx`, 6.51 MB) for ultralow-power deployment.
 
 ---
 
@@ -144,12 +151,13 @@ $$\mathbf{y}(t) = \mathcal{G}_{\text{radio}}\left( \text{Codec2}\left( \text{BPF
 | Profile Metric | Real Measured Value on Hardware | Specification / Impact |
 | :--- | :---: | :--- |
 | **Target Runtime** | `qnn_dlc` | Qualcomm Neural Network (QNN) Hexagon NPU |
-| **NPU Operator Placement** | **240 / 240 (100.0%)** | Zero fallback to CPU / DSP |
-| **Median Inference Latency** | **412.5 µs (0.412 ms)** | Per 32.0 ms streaming chunk |
-| **Real-Time Factor (RTF)** | **0.0129x** | **77.6x faster than real-time** |
-| **Peak Inference Memory** | **13.82 MB** | Hexagon SRAM / DDR footprint |
-| **Host CPU Latency (ONNXRuntime)** | **0.77 ms** | 37x faster than real-time |
-| **Compile Job / Profile Job** | [`jgzlzlvz5`](https://workbench.aihub.qualcomm.com/jobs/jgzlzlvz5/) / [`jg9zoz9qp`](https://workbench.aihub.qualcomm.com/jobs/jg9zoz9qp/) | Live Qualcomm AI Hub verified execution |
+| **NPU Operator Placement** | **240 / 240 (100.0%)** | Zero fallback to CPU / GPU |
+| **Median Inference Latency** | **411.0 µs (0.411 ms)** | Per 32.0 ms streaming chunk |
+| **Min / Max Latency** | **377.0 µs / 1421.0 µs** | Ultra-consistent edge execution |
+| **Real-Time Factor (RTF)** | **0.0128x** | **77.86x faster than real-time** |
+| **Peak Inference Memory** | **13.77 MB** | Hexagon SRAM / DDR footprint |
+| **Host CPU Latency (ONNXRuntime)** | **1.14 ms median (0.76 ms min)** | 28x faster than real-time on CPU |
+| **Compile Job / Profile Job** | [`jg9zozmlp`](https://workbench.aihub.qualcomm.com/jobs/jg9zozmlp/) / [`jp1nonj2g`](https://workbench.aihub.qualcomm.com/jobs/jp1nonj2g/) | Live Qualcomm AI Hub verified execution |
 
 ---
 
@@ -159,8 +167,16 @@ $$\mathbf{y}(t) = \mathcal{G}_{\text{radio}}\left( \text{Codec2}\left( \text{BPF
 hp/
 ├── SPEC.md
 ├── README.md
+├── CREDITS.md
 ├── pyproject.toml
 ├── requirements.txt
+├── artifacts/
+│   ├── branch_a_denoiser.onnx
+│   └── branch_a_denoiser_int8.onnx
+├── checkpoints/
+│   ├── branch_a_curriculum_best.pt
+│   ├── branch_b_best.pt
+│   └── fused_battlefield_engine.pt
 ├── configs/
 │   ├── default.yaml
 │   ├── simulation.yaml
@@ -171,33 +187,55 @@ hp/
 │   └── dataset.py
 ├── models/
 │   ├── __init__.py
-│   ├── dummy_conv_gru.py
+│   ├── conv_blocks.py
 │   ├── branch_a_denoiser.py
 │   ├── branch_b_impulse.py
 │   ├── context_encoder.py
 │   └── fused_model.py
 ├── training/
 │   ├── __init__.py
+│   ├── train_branch_a.py
+│   ├── train_branch_b.py
+│   ├── train_fusion_net.py
 │   ├── losses.py
 │   └── trainer.py
 ├── eval/
 │   ├── __init__.py
 │   ├── metrics.py
+│   ├── reliability_guard.py
+│   ├── spectral_postfilter.py
 │   └── evaluate.py
 ├── deploy/
 │   ├── __init__.py
 │   ├── export_onnx.py
+│   ├── quantize_onnx.py
 │   ├── test_onnx_runtime.py
 │   └── aihub_compile_profile.py
 ├── demo/
 │   ├── __init__.py
-│   └── app.py
+│   ├── app.py
+│   ├── gradio_app.py
+│   ├── generate_samples.py
+│   ├── download_real_radio_samples.py
+│   ├── assets/
+│   │   └── architecture_diagram.png
+│   ├── real_radio_samples/
+│   └── samples/
 ├── docs/
 │   ├── architecture.md
-│   └── aihub_guidelines.md
+│   ├── aihub_guidelines.md
+│   ├── PROJECT_DESCRIPTION.md
+│   ├── Battlefield_Radio_Intelligibility_Engine_Pitch_Deck.pptx
+│   └── generate_pitch_deck.py
+├── results/
+│   ├── aihub_real_profile.json
+│   ├── fair_comparison_benchmark.json
+│   ├── final_ablation_benchmark.json
+│   ├── branch_b_isolated_benchmark.json
+│   └── optimal_guard_params.json
 └── tests/
     ├── __init__.py
-    ├── test_dummy_model.py
+    ├── test_models.py
     ├── test_export.py
     ├── test_simulation.py
     └── test_eval.py

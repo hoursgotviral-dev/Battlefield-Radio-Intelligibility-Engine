@@ -16,7 +16,7 @@ import numpy as np
 import torch
 import onnxruntime as ort
 
-from models.dummy_conv_gru import DummyStreamingConvGRU
+from models.conv_blocks import StreamingConvGRU, DummyStreamingConvGRU
 from deploy.export_onnx import export_model_to_onnx
 
 
@@ -85,7 +85,7 @@ def verify_streaming_parity(
 
 def main():
     parser = argparse.ArgumentParser(description="Test ONNX Runtime streaming parity.")
-    parser.add_argument("--onnx", type=str, default="artifacts/dummy_conv_gru.onnx", help="Path to ONNX model")
+    parser.add_argument("--onnx", type=str, default="artifacts/branch_a_denoiser.onnx", help="Path to ONNX model")
     parser.add_argument("--config", type=str, default="configs/model_convgru.yaml", help="Path to config YAML")
     parser.add_argument("--chunks", type=int, default=10, help="Number of streaming chunks to simulate")
     args = parser.parse_args()

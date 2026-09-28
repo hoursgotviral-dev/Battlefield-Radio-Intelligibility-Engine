@@ -1,0 +1,19 @@
+{
+  "guard_params": {
+    "min_energy_ratio": 0.2,
+    "max_energy_ratio": 1.25,
+    "min_env_correlation": 0.6,
+    "min_spectral_flatness": 0.003
+  },
+  "postfilter_params": {
+    "oversubtraction": 1.2,
+    "spectral_floor": 0.08,
+    "smoothing_factor": 0.75
+  },
+  "val_baseline_wer": 1.0384615384615383,
+  "val_optimized_wer": 1.0384615384615383,
+  "val_baseline_pesq": 1.9076841150028283,
+  "val_optimized_pesq": 2.4134937643163266,
+  "val_baseline_stoi": 0.9613999601176162,
+  "val_optimized_stoi": 0.9460441962668417
+}

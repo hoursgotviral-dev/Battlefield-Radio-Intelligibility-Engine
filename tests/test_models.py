@@ -5,7 +5,7 @@ Unit tests for dummy streaming Conv-GRU and architectural modules.
 import pytest
 import torch
 
-from models.dummy_conv_gru import DummyStreamingConvGRU, CausalConv2d
+from models.conv_blocks import StreamingConvGRU, DummyStreamingConvGRU, CausalConv2d
 from models.branch_a_denoiser import BranchADenoiser
 from models.branch_b_impulse import BranchBImpulse
 from models.context_encoder import ContextEncoder

@@ -1,0 +1,42 @@
+[
+  {
+    "preset_name": "Tactical Radio Patrol (SNR 8.0 dB)",
+    "id": "test_0000",
+    "filename": "01_tactical_radio_patrol.wav",
+    "degraded_sample_path": "demo\\samples\\01_tactical_radio_patrol.wav",
+    "clean_sample_path": "demo\\samples\\01_tactical_radio_patrol_clean.wav",
+    "transcript": "after a time he gave up waiting and drearily headed for the madison car",
+    "snr_db": 7.98,
+    "duration_sec": 4.07
+  },
+  {
+    "preset_name": "Heavy Combat Ambush (Low SNR 1.1 dB)",
+    "id": "test_0003",
+    "filename": "02_heavy_combat_ambush.wav",
+    "degraded_sample_path": "demo\\samples\\02_heavy_combat_ambush.wav",
+    "clean_sample_path": "demo\\samples\\02_heavy_combat_ambush_clean.wav",
+    "transcript": "during the auction he went about with his head down and never lifted his eyes",
+    "snr_db": 1.09,
+    "duration_sec": 4.48
+  },
+  {
+    "preset_name": "Convoy Comms Breach (SNR 2.8 dB)",
+    "id": "test_0005",
+    "filename": "03_convoy_comms_breach.wav",
+    "degraded_sample_path": "demo\\samples\\03_convoy_comms_breach.wav",
+    "clean_sample_path": "demo\\samples\\03_convoy_comms_breach_clean.wav",
+    "transcript": "fortunately there was nothing from his wife either",
+    "snr_db": 2.78,
+    "duration_sec": 2.79
+  },
+  {
+    "preset_name": "Command Briefing Dispatch (SNR 9.5 dB)",
+    "id": "test_0001",
+    "filename": "04_command_briefing_dispatch.wav",
+    "degraded_sample_path": "demo\\samples\\04_command_briefing_dispatch.wav",
+    "clean_sample_path": "demo\\samples\\04_command_briefing_dispatch_clean.wav",
+    "transcript": "throughout this century the power of the church was constantly on the increase and is visible in many important changes",
+    "snr_db": 9.5,
+    "duration_sec": 7.88
+  }
+]

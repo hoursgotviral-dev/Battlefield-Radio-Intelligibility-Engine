@@ -19,7 +19,6 @@ from typing import Dict, Optional, Tuple, Union
 import numpy as np
 import scipy.signal as signal
 import torch
-import torchaudio
 
 
 class BattlefieldAudioSimulator:

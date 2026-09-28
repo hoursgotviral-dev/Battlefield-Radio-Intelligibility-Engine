@@ -15,7 +15,7 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 
-from models.dummy_conv_gru import DummyStreamingConvGRU
+from models.conv_blocks import StreamingConvGRU, DummyStreamingConvGRU
 from data.dataset import TacticalSpeechDataset
 from training.losses import MultiResolutionSTFTLoss, SISDRLoss
 

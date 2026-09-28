@@ -1,0 +1,46 @@
+[
+  {
+    "id": "ood_00",
+    "scenario": "tank_convoy_heavy_rumble",
+    "description": "Armored Column Engine Rumble & RF Static",
+    "snr_db": -5.0,
+    "clean_path": "demo\\real_radio_samples\\ood_00_tank_convoy_heavy_rumble_clean.wav",
+    "degraded_path": "demo\\real_radio_samples\\ood_00_tank_convoy_heavy_rumble_deg.wav",
+    "enhanced_path": "demo\\real_radio_samples\\ood_00_tank_convoy_heavy_rumble_enh.wav",
+    "guard_safe": false,
+    "guard_confidence": 0.22578145800680977
+  },
+  {
+    "id": "ood_01",
+    "scenario": "urban_breach_gunfire_bursts",
+    "description": "Close Quarters Firefight & Dynamic Saturation",
+    "snr_db": 0.0,
+    "clean_path": "demo\\real_radio_samples\\ood_01_urban_breach_gunfire_bursts_clean.wav",
+    "degraded_path": "demo\\real_radio_samples\\ood_01_urban_breach_gunfire_bursts_deg.wav",
+    "enhanced_path": "demo\\real_radio_samples\\ood_01_urban_breach_gunfire_bursts_enh.wav",
+    "guard_safe": false,
+    "guard_confidence": 0.4585772126775159
+  },
+  {
+    "id": "ood_02",
+    "scenario": "rotary_wing_airlift_noise",
+    "description": "Turbulent Helicopter Rotor Wash & Narrowband Radio",
+    "snr_db": 3.0,
+    "clean_path": "demo\\real_radio_samples\\ood_02_rotary_wing_airlift_noise_clean.wav",
+    "degraded_path": "demo\\real_radio_samples\\ood_02_rotary_wing_airlift_noise_deg.wav",
+    "enhanced_path": "demo\\real_radio_samples\\ood_02_rotary_wing_airlift_noise_enh.wav",
+    "guard_safe": false,
+    "guard_confidence": 0.3274685896855369
+  },
+  {
+    "id": "ood_03",
+    "scenario": "perimeter_patrol_codec2_drop",
+    "description": "Tactical Radio Channel Quantization & Multipath",
+    "snr_db": 8.0,
+    "clean_path": "demo\\real_radio_samples\\ood_03_perimeter_patrol_codec2_drop_clean.wav",
+    "degraded_path": "demo\\real_radio_samples\\ood_03_perimeter_patrol_codec2_drop_deg.wav",
+    "enhanced_path": "demo\\real_radio_samples\\ood_03_perimeter_patrol_codec2_drop_enh.wav",
+    "guard_safe": false,
+    "guard_confidence": 0.2573976211550953
+  }
+]

@@ -27,6 +27,7 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from eval.metrics import compute_pesq, compute_stoi, compute_wer, WhisperEvaluator
 from eval.reliability_guard import ReliabilityGuard
+from eval.spectral_postfilter import SpectralPostFilter
 
 
 class ProductionONNXStreamingEngine:
@@ -167,21 +168,34 @@ def run_live_demo(sample_id: str = "test_0000"):
     engine = ProductionONNXStreamingEngine("artifacts/branch_a_denoiser.onnx")
     raw_enh_audio, timing = engine.process_streaming(deg_audio)
 
-    # 4. Apply Soft-Blend Reliability Guard
-    print("\n[3/4] Evaluating Soft-Blend Reliability Guard (energy/flatness/correlation checks)...")
-    guard = ReliabilityGuard()
+    # 4. Apply Soft-Blend Reliability Guard & Spectral Post-Filter
+    print("\n[3/4] Evaluating Soft-Blend Reliability Guard & DSP Spectral Post-Filter...")
+    opt_file = Path("results/optimal_guard_params.json")
+    if opt_file.exists():
+        with open(opt_file, "r") as f:
+            opt = json.load(f)
+        guard = ReliabilityGuard(**opt.get("guard_params", {}))
+        postfilter = SpectralPostFilter(**opt.get("postfilter_params", {}))
+    else:
+        guard = ReliabilityGuard()
+        postfilter = SpectralPostFilter()
+
     t0_guard = time.perf_counter()
     guarded_audio, is_safe, conf, triggers = guard.apply_guard(deg_audio, raw_enh_audio, mode="soft")
     t_guard_ms = (time.perf_counter() - t0_guard) * 1000.0
+
+    t0_pf = time.perf_counter()
+    final_audio = postfilter.process(guarded_audio)
+    t_pf_ms = (time.perf_counter() - t0_pf) * 1000.0
 
     # 5. Whisper ASR & Metrics Evaluation
     print("\n[4/4] Transcribing with Whisper ASR & Computing Intelligibility Metrics...")
     whisper_eval = WhisperEvaluator()
     
-    min_len = min(len(clean_audio), len(deg_audio), len(guarded_audio))
+    min_len = min(len(clean_audio), len(deg_audio), len(final_audio))
     c_eval = clean_audio[:min_len]
     d_eval = deg_audio[:min_len]
-    e_eval = guarded_audio[:min_len]
+    e_eval = final_audio[:min_len]
 
     pesq_deg = compute_pesq(c_eval, d_eval, sr)
     pesq_enh = compute_pesq(c_eval, e_eval, sr)
@@ -223,7 +237,7 @@ def run_live_demo(sample_id: str = "test_0000"):
     out_deg_path = f"demo/output/{sample['id']}_degraded.wav"
     out_enh_path = f"demo/output/{sample['id']}_enhanced.wav"
     sf.write(out_deg_path, deg_audio, sr)
-    sf.write(out_enh_path, guarded_audio, sr)
+    sf.write(out_enh_path, final_audio, sr)
     print(f"\n[+] Audio artifacts saved:\n    - Input Degraded: {out_deg_path}\n    - Guarded Enhanced: {out_enh_path}\n")
 
 

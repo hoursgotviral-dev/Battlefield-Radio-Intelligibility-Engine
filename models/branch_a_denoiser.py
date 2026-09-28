@@ -12,7 +12,7 @@ in background noise power.
 from typing import Tuple
 import torch
 import torch.nn as nn
-from models.dummy_conv_gru import CausalConv2d
+from models.conv_blocks import CausalConv2d
 
 
 class BranchADenoiser(nn.Module):

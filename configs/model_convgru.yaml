@@ -1,5 +1,5 @@
 model:
-  architecture: "dummy_conv_gru"
+  architecture: "branch_a_denoiser"
   freq_bins: 257
   conv_channels: 32
   gru_hidden_dim: 64
@@ -15,7 +15,7 @@ deploy:
     input_names: ["input_chunk", "h_in"]
     output_names: ["enhanced_chunk", "h_out"]
     dynamic_axes: {} # Must be static for Qualcomm AI Hub NPU compilation
-    output_file: "artifacts/dummy_conv_gru.onnx"
+    output_file: "artifacts/branch_a_denoiser.onnx"
   qualcomm_aihub:
     device_name: "Snapdragon X Elite"
     chipset: "qualcomm-snapdragon-x-elite"

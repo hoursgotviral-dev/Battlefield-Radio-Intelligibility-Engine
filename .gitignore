@@ -41,3 +41,6 @@ data/simulated/**/clean/
 data/simulated/**/degraded/
 !data/simulated/**/manifest.json
 
+# Scratch exploration and local run artifacts
+scratch/
+

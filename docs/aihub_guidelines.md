@@ -23,12 +23,12 @@
 
 Export ONNX model:
 ```bash
-python deploy/export_onnx.py --config configs/model_convgru.yaml --output artifacts/dummy_conv_gru.onnx
+python deploy/export_onnx.py --config configs/model_convgru.yaml --output artifacts/branch_a_denoiser.onnx
 ```
 
 Verify numeric parity across streaming chunks:
 ```bash
-python deploy/test_onnx_runtime.py --onnx artifacts/dummy_conv_gru.onnx
+python deploy/test_onnx_runtime.py --onnx artifacts/branch_a_denoiser.onnx
 ```
 
 Submit compilation and profiling job to Qualcomm AI Hub:

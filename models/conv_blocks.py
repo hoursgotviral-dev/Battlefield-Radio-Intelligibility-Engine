@@ -1,5 +1,5 @@
 """
-Streaming Conv-GRU Dummy Model for Tactical Speech Enhancement.
+Streaming Conv-GRU Architecture and Causal Convolution Blocks for Tactical Speech Enhancement.
 
 ML Concept - Streaming Recurrent Spectral Masking:
 In real-time low-latency speech enhancement, full-utterance models (e.g. standard Transformers
@@ -53,7 +53,7 @@ class CausalConv2d(nn.Module):
         return self.conv(x_padded)
 
 
-class DummyStreamingConvGRU(nn.Module):
+class StreamingConvGRU(nn.Module):
     """
     Fixed-shape streaming Conv-GRU model designed for Qualcomm AI Hub NPU export.
 
@@ -152,3 +152,7 @@ class DummyStreamingConvGRU(nn.Module):
     def init_hidden_state(self, batch_size: int = 1, device: torch.device = torch.device("cpu")) -> torch.Tensor:
         """Helper to create zero-initialized state tensor."""
         return torch.zeros(self.num_gru_layers, batch_size, self.gru_hidden_dim, device=device)
+
+
+# Alias for backward compatibility
+DummyStreamingConvGRU = StreamingConvGRU

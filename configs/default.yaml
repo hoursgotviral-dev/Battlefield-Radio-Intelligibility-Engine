@@ -6,7 +6,7 @@ audio:
   chunk_frames: 4  # Streaming chunk size: 4 frames = 512 samples = 32 ms
 
 model:
-  name: "dummy_conv_gru"
+  name: "branch_a_denoiser"
   freq_bins: 257
   conv_channels: 32
   gru_hidden_dim: 64
@@ -30,7 +30,7 @@ simulation:
 
 deploy:
   opset_version: 17
-  onnx_output_path: "artifacts/dummy_conv_gru.onnx"
+  onnx_output_path: "artifacts/branch_a_denoiser.onnx"
   target_device: "Snapdragon X Elite"
   aihub_api_token: "${QAI_HUB_API_TOKEN}"
 
