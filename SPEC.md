@@ -93,7 +93,7 @@ The production system deploys **Branch A (Continuous Noise Denoiser + Soft-Blend
 ### 3.3 Production Enhancement Module: Spectral Post-Filter
 - **Objective**: Eliminate residual musical noise and low-frequency tactical rumble post-NPU mask synthesis.
 - **Topology**: Causal Wiener-gain estimator with asymmetric temporal smoothing ($\alpha_{\text{attack}} = 0.8$, $\alpha_{\text{decay}} = 0.4$) and a safety gain floor ($G_{\text{floor}} = 0.05$).
-- **Impact**: Provides significant perceptual clarity improvements (val PESQ $1.908 \to 2.413$) with negligible (< 0.1 ms) host CPU compute.
+- **Impact**: Provides significant perceptual clarity improvements (test PESQ $1.879 \to 2.398$, $+0.519$ delta; val PESQ $1.908 \to 2.413$) with negligible (< 0.1 ms) host CPU compute.
 
 ---
 

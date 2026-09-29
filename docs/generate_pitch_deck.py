@@ -82,7 +82,7 @@ def create_deck():
 
     p = tf.add_paragraph()
     p.text = "• Target Hardware: Snapdragon X Elite (Qualcomm Hexagon NPU — 411 µs / 100% On-NPU)\n" \
-             "• Mathematical Safety: Deterministic Reliability Guardrail (Zero Catastrophic WER Failure)\n" \
+             "• Dual Tactical Modes: Intelligibility Mode (0.409 WER) vs. Quality Mode (2.398 PESQ)\n" \
              "• Full Deployment: QNN Context Binary (Job jg9zozmlp) + Profile (Job jp1nonj2g) + INT8 Quantized"
     p.font.name = "Arial"
     p.font.size = Pt(14)
@@ -260,10 +260,10 @@ def create_deck():
     tf.word_wrap = True
 
     steps = [
-        ("Step 1: Baseline Deployment (v1)", "Branch A Causal ConvGRU + Default Guard. Baseline deployed on Snapdragon NPU achieving 411 µs latency."),
-        ("Step 2: Reliability Guard Hyperparameter Tuning (Phase 8A)", "Systematic grid search on validation set (energy ratios, spectral flatness, envelope correlation). Guarantees zero WER regression at low SNR."),
-        ("Step 3: Host-Side DSP Spectral Post-Filter (Phase 8B)", "Classical Wiener post-filter applied after iSTFT synthesis. Removes residual high-frequency radio hiss and boosts PESQ/STOI."),
-        ("Step 4: INT8 Dynamic Quantization (Phase 8C)", "ONNX Runtime dynamic quantization generated INT8 model (artifacts/branch_a_denoiser_int8.onnx) for low memory bandwidth edge devices."),
+        ("Step 1: Baseline Deployment (v1)", "Branch A Causal ConvGRU + Default Guard. Baseline deployed on Snapdragon NPU achieving 411 µs latency (PESQ: 1.232, STOI: 0.758)."),
+        ("Step 2: Reliability Guard Hyperparameter Tuning (Phase 8A — ASR Mode)", "Systematic grid search on validation set (energy ratios, spectral flatness, envelope correlation). Yields optimal Whisper WER of 0.409 (median: 0.353 vs 0.364 baseline)."),
+        ("Step 3: Host-Side DSP Spectral Post-Filter (Phase 8B — Quality Mode)", "Classical Wiener post-filter applied after iSTFT synthesis. Squelches stationary radio hiss, boosting test PESQ from 1.879 to 2.398 (+0.519 delta; Val: 2.413) with STOI 0.944."),
+        ("Step 4: INT8 Dynamic Quantization (Phase 8C)", "ONNX Runtime dynamic quantization generated INT8 model (artifacts/branch_a_denoiser_int8.onnx, 6.51 MB) for memory-constrained edge SDR."),
     ]
     for i, (stitle, sdesc) in enumerate(steps):
         p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
@@ -291,13 +291,13 @@ def create_deck():
     tf.word_wrap = True
 
     comp_text = [
-        ("Why Intelligibility (WER) is the Tactical Metric That Matters:", AMBER),
-        ("In military communications, human operators and automated command-and-control systems require correct word recognition (callsigns, coordinates, fire missions), not cosmetic hi-fi acoustics.", WHITE),
-        ("Key Comparative Insights:", CYAN),
-        ("1. Best Tactical WER: Branch A + Guard achieves superior word error rate compared to all tested systems.", WHITE),
-        ("2. 100% NPU Deployable: DeepFilterNet3 cannot be compiled to edge NPU due to complex-valued STFT ops and heavy dual-path transformers.", WHITE),
-        ("3. 77× Real-Time Throughput: 411 µs latency per 32 ms chunk leaves 98.7% of NPU time free for on-device ASR and encryption.", WHITE),
-        ("4. Reliability Guarantee: The engine's soft-blend guardrail mathematically prevents catastrophic speech suppression.", WHITE),
+        ("Tactical Mission Flexibility: Quality Mode vs. Intelligibility Mode", AMBER),
+        ("In military communications, automated ASR command-and-control requires preserving consonant transients, while human operators in noisy armored cockpits require background hiss squelch.", WHITE),
+        ("Key Comparative Insights & Canonical Test Set Results:", CYAN),
+        ("1. Intelligibility Mode (Branch A + Guard): Minimizes Word Error Rate (0.409 mean / 0.353 median WER vs 0.443 / 0.364 raw degraded) for automated Whisper ingestion.", WHITE),
+        ("2. Quality Mode (+ Spectral Post-Filter): Squelches residual static for human ears, achieving a massive +0.52 PESQ jump (1.879 -> 2.398, STOI: 0.944). Toggleable in real time.", WHITE),
+        ("3. 100% NPU Residency: 240/240 ops on Hexagon NPU (0 CPU fallback). DeepFilterNet3 cannot be compiled due to complex STFT ops.", WHITE),
+        ("4. 77× Real-Time Throughput: 411 µs latency per 32 ms chunk leaves 98.7% of NPU compute budget free for concurrent ASR & crypto.", WHITE),
     ]
     for i, (title, color) in enumerate(comp_text):
         p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()

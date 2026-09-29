@@ -10,8 +10,8 @@ While heavy offline models (e.g., DeepFilterNet3, Demucs) achieve high perceptua
 
 Our engine solves this fundamental trade-off through a 3-stage co-designed architecture:
 1. **Causal Spatial-Spectral Conv-GRU Neural Core (Branch A)**: 2-layer stateful recurrent denoiser (6.28 MB FP32 / 6.21 MB INT8) compiled with **100% on-NPU operator residency (240/240 ops)** on Snapdragon Hexagon NPU, executing in **411.0 µs per 32 ms chunk** (77.86× real-time speedup).
-2. **Deterministic Soft-Blend Reliability Guardrail**: Real-time acoustic safety envelope tracking energy ratio, spectral flatness, and temporal envelope cross-correlation. If low-SNR noise threatens speech formants, it dynamically modulates blending to mathematically guarantee that the engine **never outputs audio with higher WER than the input**.
-3. **Host-Side DSP Spectral Post-Filter**: Causal Wiener-based residual noise suppressor applied after guard synthesis, eliminating residual radio hiss and musical noise floor flutter without altering neural network weights.
+2. **Deterministic Soft-Blend Reliability Guardrail**: Real-time acoustic safety envelope tracking energy ratio, spectral flatness, and temporal envelope cross-correlation. When low-SNR noise threatens speech formants, it dynamically modulates blending to prevent speech collapse, enabling an **Intelligibility Mode** that reduces mean WER from 0.443 down to 0.409 (median: 0.353).
+3. **Host-Side DSP Spectral Post-Filter**: Causal Wiener-based residual noise suppressor applied after guard synthesis, eliminating residual radio hiss and musical noise floor flutter without altering neural network weights, enabling a **Quality Mode** that boosts PESQ to 2.398 (+0.52).
 
 ---
 
@@ -26,7 +26,16 @@ Our engine solves this fundamental trade-off through a 3-stage co-designed archi
 | **Peak Memory Footprint** | **13.77 MB** runtime memory allocation | Qualcomm AI Hub memory profiler |
 | **Stateful Streaming Latency** | **32 ms algorithmic window** (8 ms hop, 4 frames) | Fully causal CausalConv2d + stateful GRU |
 | **Quantization Support** | **INT8 Dynamic Quantization** supported | `artifacts/branch_a_denoiser_int8.onnx` |
-| **Reliability Guarantee** | **Zero Catastrophic WER Failure Mode** | Soft-blend reliability guardrail |
+| **Acoustic Safety Guardrail** | **Zero Speech Collapse / 0.409 WER** | Soft-blend reliability guardrail |
+| **Perceptual Quality (Test Set)**| **PESQ: 2.398 (+0.519 delta) / STOI: 0.944** | `results/optimized_pipeline_benchmark.json` |
+
+---
+
+### Dual Operational Modes: Quality Mode vs. Intelligibility Mode
+
+Tactical radio deployments demand flexibility between human comprehension and automated ASR systems:
+- **Intelligibility Mode (`Branch A + Guardrail`)**: Tailored for automated edge speech recognition (e.g., Whisper) and command-and-control ingestion. Achieves the lowest Word Error Rate (**0.409 mean / 0.353 median WER** vs. 0.443 / 0.364 baseline) by preserving unvoiced consonants and delicate formant transitions.
+- **Quality Mode (`Branch A + Guardrail + Post-Filter`)**: Tailored for tactical radio operators in noisy combat cockpits or armored vehicles. Delivers a dramatic jump in speech clarity (**PESQ 1.879 → 2.398, +0.519 delta**; STOI: 0.944) by aggressively squelching background radio hiss, with an operator-selectable trade-off in machine ASR (0.507 WER). Toggleable in real time via Gradio UI or CLI.
 
 ---
 
@@ -101,7 +110,7 @@ To validate performance under operational conditions beyond synthetic i.i.d. spl
 ### Conclusion & Impact
 The Battlefield Radio Intelligibility Engine proves that state-of-the-art speech enhancement on edge tactical devices does not require massive transformer backbones or high power budgets. By combining:
 - A lean, fully NPU-accelerated neural core (411 µs on Hexagon NPU),
-- A mathematical safety guardrail preventing ASR hallucinations, and
-- A host-side classical DSP post-filter,
+- A mathematical safety guardrail preventing speech collapse and minimizing WER, and
+- An operator-toggleable DSP spectral post-filter boosting PESQ by +0.52,
 
-the system delivers uncompromising tactical intelligibility, zero regression risk, and 77× real-time throughput on Qualcomm Snapdragon hardware.
+the system delivers uncompromising tactical intelligibility, selectable mission modes, and 77× real-time throughput on Qualcomm Snapdragon hardware.
